@@ -47,6 +47,9 @@ const checkAnswer = () => {
         }
         else {
             document.getElementById('instruction').innerHTML = "Woops, it's worng";
+            for (let i = 1; i<=4; i++) {
+                document.getElementById('d'+i).style.animation = "shake 0.5s forwards";
+            }
         }
     }
     else {
