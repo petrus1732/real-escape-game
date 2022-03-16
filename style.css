@@ -27,7 +27,7 @@ p {
 figure {
     display: flex;
     justify-content: center;
-    width: 120rem;
+    width: 60rem;
     height: 40rem;
     background-color: black;
     margin: auto;
@@ -181,6 +181,18 @@ img {
 @keyframes changeToGreen{
     100% {
         background-color: rgb(66, 201, 25);
+    }
+}
+
+@keyframes shake {
+    30% {
+        left: -1rem;
+    }
+    70% {
+        left: 0.5rem;
+    }
+    100% {
+        left: 0;
     }
 }
 
