@@ -5,15 +5,14 @@ body{
   background: black;
   font-family: 微軟正黑體, sans-serif;
   color: white;
-  font-size: 2rem;
-  height: 100vh;
+  height: 90vh;
 }
 
 .container{
   display: none;
   flex-direction: column;
-  margin: 20vh auto;
-  height: 40vh;
+  margin: 20vh auto 0;
+  height: 30vw;
   width: 60vw;
   overflow: hidden;
   position: relative;
@@ -24,9 +23,9 @@ body{
 
 .dynamic-text{
   position: relative;
-  height: 4vw;
+  height: 7vw;
   width: 60vw;
-  font-size: 3vw;
+  font-size: 6vw;
   white-space: nowrap;
 }
 
@@ -38,7 +37,7 @@ body{
   bottom: 0;
   left:0;
   background: black;
-  animation: typewriter 2s steps(20) forwards;
+  animation: typewriter 2s steps(10) forwards;
 }
 
 #s1::before {
@@ -68,8 +67,8 @@ body{
 
 button {
   background: black;
-  width: 5vw;
-  height: 5vw;
+  width: 12vw;
+  height: 12vw;
   border-radius: 50%;
   border: 1px solid gold;
   animation: blink 2s infinite;
