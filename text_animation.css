@@ -22,13 +22,18 @@ body{
 
 
 .dynamic-text{
-  display: inline;
-  background: blue;
+  display: flex;
+  background: purple;
   text-align: justify;
   position: relative;
   padding: 0;
+  width: 60vw;
   font-size: 6vw;
   white-space: nowrap;
+}
+span {
+  display: inline-block;
+  width: 6vw;
 }
 
 .dynamic-text::before{
@@ -98,7 +103,3 @@ button:hover {
   height: 100%;
   clip-path: polygon(40% 30%, 48% 30%, 74% 50%, 48% 70%, 40% 70%, 66% 50%)
 }
-
-
-
-
