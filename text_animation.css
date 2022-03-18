@@ -22,14 +22,14 @@ body{
 
 
 .dynamic-text{
-  position: relative;
+  .dynamic-text{
+  display: inline;
+  background: blue;
   text-align: justify;
+  position: relative;
   padding: 0;
-  height: 8vw;
-  width: 60vw;
   font-size: 6vw;
   white-space: nowrap;
-  background: green;
 }
 
 .dynamic-text::before{
