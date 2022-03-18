@@ -23,8 +23,9 @@ body{
 
 .dynamic-text{
   position: relative;
+  text-align: justify;
   padding: 0;
-  height: 6vw;
+  height: 8vw;
   width: 60vw;
   font-size: 6vw;
   white-space: nowrap;
