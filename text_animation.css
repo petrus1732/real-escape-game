@@ -11,19 +11,17 @@ body{
 .container{
   display: none;
   flex-direction: column;
-  margin: 20vh auto 0;
-  height: 30vw;
+  margin: 20vh auto 5vh;
+  height: 40vw;
   width: 60vw;
   overflow: hidden;
   position: relative;
 }
 
 
-
-
 .dynamic-text{
   position: relative;
-  height: 7vw;
+  height: 8vw;
   width: 60vw;
   font-size: 6vw;
   white-space: nowrap;
