@@ -28,7 +28,7 @@ body{
   width: 60vw;
   font-size: 6vw;
   white-space: nowrap;
-  background: blue;
+  background: green;
 }
 
 .dynamic-text::before{
