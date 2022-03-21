@@ -42,13 +42,13 @@ const checkAnswer = () => {
         if (submission === answer) {
             document.getElementById('instruction').innerHTML = 'Yeah, you got it';
             for (let i = 1; i<=4; i++) {
-                document.getElementById('d'+i).style.animation = "changeToGreen 1s forwards";
+                document.getElementById('d'+i).style.animation = "correct 1s forwards";
             }
         }
         else {
             document.getElementById('instruction').innerHTML = "Woops, it's worng";
-            for (let i = 1; i<=4; i++) {
-                document.getElementById('d'+i).style.animation = "shake 0.5s forwards";
+            for (let i = 0; i<4; i++) {
+                document.getElementsByClassName('shake')[i].style.animation = "shake 4s forwards";
             }
         }
     }
@@ -56,3 +56,27 @@ const checkAnswer = () => {
         document.getElementById('instruction').innerHTML = '輸入必須為四位數字!';
     }
 }
+
+/* library */
+const state = {
+    "pass_demon": false,
+    "pass_balcony": false
+}
+
+const check_valid = (e) => {
+    if (e.value.toLowerCase()===e.id) {
+        e.style.animation = "correct 1s forwards";
+        e.setAttribute("readOnly",true);
+        state["pass_"+e.id] = true;
+        if (state["pass_demon"] && state["pass_balcony"]) {
+            document.getElementById("nextpage").style.display = "block";
+
+        }
+    }
+    else {
+        e.style.animation = "wrong 0.7s ease-out forwards";
+        setTimeout(()=>e.style.animation="none", 700);
+    }
+}
+
+
