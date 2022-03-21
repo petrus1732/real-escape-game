@@ -18,6 +18,7 @@ header {
 
 
 p {
+    position: relative;
     margin: 5rem auto;
     width: 80%;
     background-color: grey;
@@ -35,6 +36,10 @@ figure {
 
 img {
     height: 80%;
+}
+
+.grid {
+    display: grid;
 }
 
 .button {
@@ -72,7 +77,9 @@ img {
 }
 
 .digit {
+    position:relative;
     display: flex;
+    
     align-items: center;
     justify-content: center;
     padding: auto;
@@ -124,12 +131,9 @@ img {
     clip-path: polygon(0% 80%, 10% 100%, 10% 86%, 100% 86%, 100% 30%, 97% 30%, 97% 74%, 10% 74%, 10% 60%);
     background-color: white;
 }
-.grid {
-    display: grid;
-}
 
 #pillars {
-    grid-template: 15rem 10rem 15rem 10rem 15rem/ 15rem 1fr 15rem 1fr 15rem;
+    grid-template: 15rem 10rem 15rem 10rem 15rem / 15rem 1fr 15rem 1fr 15rem;
     width:100%;
     height: 100%;
 }
@@ -178,11 +182,7 @@ img {
     background-color: rebeccapurple;
 }
 
-@keyframes changeToGreen{
-    100% {
-        background-color: rgb(66, 201, 25);
-    }
-}
+
 
 @keyframes shake {
     30% {
@@ -196,3 +196,91 @@ img {
     }
 }
 
+/*Library*/
+
+#library1 {
+    width: 65vw;
+    grid-template: 10vh 10vh 10vh / 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+    font-size: 5vh;
+}
+
+#library2 {
+    width: 91vw;
+    grid-template: 10vh 10vh 10vh / 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+    font-size: 5vh;
+}
+
+#library1 div, #library2 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7vh;
+} 
+
+#library1 .border, #library2 .border {
+    border: 1px double gold;
+    font-size: 5vh;
+}
+
+form {
+    width: 30vw;
+    margin: 5vw auto;
+}
+
+input {
+    display: block;
+    width: 15vw;
+    margin: 1vw auto;
+    border-color: gold;
+    font-size: 1rem;
+}
+
+@keyframes correct {
+    100% {
+        background: rgb(66, 201, 25);
+    }
+}
+
+@keyframes wrong {
+    0% {
+        background: red;
+    }
+    100% {
+        background: black;
+    }
+}
+
+button {
+    display: none;
+    margin: 0 auto;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    border: 1px solid gold;
+    animation: blink 1.5s infinite;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  @keyframes blink {
+    0%{
+      opacity: 0.5;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0.5;
+    }
+  }
+  
+  #arrow {
+    background: gold;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(40% 30%, 48% 30%, 74% 50%, 48% 70%, 40% 70%, 66% 50%)
+  }
