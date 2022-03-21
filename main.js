@@ -69,8 +69,7 @@ const check_valid = (e) => {
         e.setAttribute("readOnly",true);
         state["pass_"+e.id] = true;
         if (state["pass_demon"] && state["pass_balcony"]) {
-            document.getElementById("nextpage").style.display = "block";
-
+            setTimeout(()=>document.getElementById("nextpage").style.display = "block",1000);
         }
     }
     else {
@@ -78,5 +77,4 @@ const check_valid = (e) => {
         setTimeout(()=>e.style.animation="none", 700);
     }
 }
-
 
