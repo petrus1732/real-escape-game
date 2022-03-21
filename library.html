@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>At The Library</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="grid" id="library1">
+            <div class="border">   </div><div class="border">   </div><div class="border">2,1</div><div class="border">2,8</div><div class="border">   </div>
+            <div class="border">1,9</div><div class="border">3,3</div><div class="border">   </div><div class="border">   </div><div class="border">4,2</div>
+            <div> D </div><div> _ </div><div> _ </div><div> _ </div><div> _ </div>
+        </div>
+        <div class="grid" id="library2">
+            <div class="border">   </div><div class="border">1,1</div><div class="border">   </div><div class="border">4,3</div><div class="border">2,8</div><div class="border">   </div><div class="border">3,10</div>
+            <div class="border">2,1</div><div class="border">   </div><div class="border">4,5</div><div class="border">   </div><div class="border">   </div><div class="border">4,2</div><div class="border">   </div>
+            <div> _ </div><div> _ </div><div> _ </div><div> _ </div><div> O </div><div> _ </div><div> _ </div>
+        </div>
+        <form>
+            <input id="demon" onchange="check_valid(this)">
+            <br>
+            <input id="balcony" onchange="check_valid(this)">
+        </form>
+        <button id="nextpage"><div id="arrow"></div></button>
+    </body>
+    <script src="main.js"></script>
+</html>
