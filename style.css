@@ -200,16 +200,16 @@ img {
 
 #library1 {
     width: 65vw;
-    grid-template: 10vh 10vh 10vh / 13vw 13vw 13vw 13vw 13vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw;
     margin: 5vh auto;
-    font-size: 5vh;
+    font-size: 5vw;
 }
 
 #library2 {
     width: 91vw;
-    grid-template: 10vh 10vh 10vh / 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
     margin: 5vh auto;
-    font-size: 5vh;
+    font-size: 5vw;
 }
 
 #library1 div, #library2 div {
