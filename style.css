@@ -219,7 +219,7 @@ img {
 
 #library1 .border, #library2 .border {
     border: 1px double gold;
-    font-size: (4vw,4vh);
+    font-size: min(4vw,4vh);
 }
 
 form {
@@ -232,7 +232,7 @@ input {
     width: 30vw;
     margin: 1vw auto;
     border-color: gold;
-    font-size: vw;
+    font-size: 3vw;
 }
 
 @keyframes correct {
