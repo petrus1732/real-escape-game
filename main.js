@@ -1,11 +1,13 @@
 const goToSecondPage = () => {
     window.location = './second_page.html';
-    console.log('QQ');
 }
 
 const goToThirdPage = () => {
     window.location = './third_page.html';
-    console.log('QQ');
+}
+
+const nextpage = (loc) => {
+    window.location = './' + loc + '.html';
 }
 
 let inputField = '';
@@ -64,12 +66,12 @@ const state = {
 }
 
 const check_valid = (e) => {
-    if (e.value.toLowerCase()===e.id) {
+    if (e.value.toLowerCase().replace(/ /g, "")===e.id) {
         e.style.animation = "correct 1s forwards";
         e.setAttribute("readOnly",true);
         state["pass_"+e.id] = true;
         if (state["pass_demon"] && state["pass_balcony"]) {
-            setTimeout(()=>document.getElementById("nextpage").style.display = "block",1000);
+            setTimeout(()=>document.getElementById("hidden").style.display = "block",1000);
         }
     }
     else {
@@ -77,4 +79,3 @@ const check_valid = (e) => {
         setTimeout(()=>e.style.animation="none", 700);
     }
 }
-
