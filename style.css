@@ -232,7 +232,7 @@ input {
     width: 30vw;
     margin: 1vw auto;
     border-color: gold;
-    font-size: 2vw;
+    font-size: vw;
 }
 
 @keyframes correct {
