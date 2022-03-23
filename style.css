@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     background-color:black;
-    font-family: 'Times New Roman', Times, serif, 標楷體;
+    font-family: 'Times New Roman', Times, serif, 標楷體, 微軟正黑體;
     color: white;
 }
 
@@ -58,9 +58,9 @@ input {
 
 
 
-
 figure {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
@@ -69,7 +69,7 @@ figure {
 }
 
 img {
-    width: 40vw;
+    width: 80vw;
 }
 
 .grid {
@@ -285,12 +285,13 @@ form {
     }
 }
 
-@media screen and (max-width: 760px) {
-    figure {
-        flex-direction: column;
+@media screen and (min-width: 760px) {
+    figure{
+        flex-direction: row;
     }
+
     img {
-        width: 80vw;
+        width: 40vw;
     }
 }
 
