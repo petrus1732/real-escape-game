@@ -61,6 +61,7 @@ const checkAnswer = () => {
 
 /* library */
 const state = {
+    "pass_不願面對的真相": false,
     "pass_demon": false,
     "pass_balcony": false
 }
@@ -70,8 +71,11 @@ const check_valid = (e) => {
         e.style.animation = "correct 1s forwards";
         e.setAttribute("readOnly",true);
         state["pass_"+e.id] = true;
+        if (state["pass_不願面對的真相"]) {
+            setTimeout(()=>document.getElementById("goToLibrary").style.display = "block",1000);
+        }
         if (state["pass_demon"] && state["pass_balcony"]) {
-            setTimeout(()=>document.getElementById("hidden").style.display = "block",1000);
+            setTimeout(()=>document.getElementById("goToSomePlace").style.display = "block",1000);
         }
     }
     else {
