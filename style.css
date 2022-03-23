@@ -13,23 +13,29 @@ header {
 
 p {
     text-align: center;
+    font-size: 3vw;
+}
+
+input {
+    border-color: gold;
+    font-size: 3vw;
 }
 
 /* next page */
 
 .nextpage {
-    display: block;
+    display: none;
     margin: 0 auto;
     width: 12vw;
     height: 12vw;
     border-radius: 50%;
     border: 1px solid gold;
     animation: blink 1.5s infinite;
-  }
+}
   
-  .nextpage:hover {
+.nextpage:hover {
     cursor: pointer;
-  }
+}
   
   @keyframes blink {
     0%{
@@ -43,12 +49,12 @@ p {
     }
   }
   
-  .arrow {
+.arrow {
     background: gold;
     width: 100%;
     height: 100%;
     clip-path: polygon(40% 30%, 48% 30%, 74% 50%, 48% 70%, 40% 70%, 66% 50%)
-  }
+}
 
 
 
@@ -56,6 +62,8 @@ p {
 figure {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
     background-color: black;
     margin: auto;
 }
@@ -222,6 +230,9 @@ img {
     }
 }
 
+/*Mom's diary*/
+
+
 /*Library*/
 
 #library1 {
@@ -253,12 +264,10 @@ form {
     margin: 5vw auto;
 }
 
-input {
+.blockinput {
     display: block;
     width: 30vw;
     margin: 1vw auto;
-    border-color: gold;
-    font-size: 3vw;
 }
 
 @keyframes correct {
@@ -276,8 +285,12 @@ input {
     }
 }
 
-#hidden {
-    display: "none";
+@media screen and (max-width: 760px) {
+    figure {
+        flex-direction: column;
+    }
+    img {
+        width: 80vw;
+    }
 }
-
 
