@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'cwTeXKai';
-    src: url('標楷體.ttc');
+    font-family: 'cwTeXKi';
+    src: url('./標楷體.ttc');
 }
 
 * {
     box-sizing: border-box;
     background-color:black;
-    font-family: 'cwTeXKai','Times New Roman', Times, sans-serif;
+    font-family: 'Times New Roman', Times, 'cwTeXKi', '微軟正黑體', sans-serif;;
     color: white;
 }
 
