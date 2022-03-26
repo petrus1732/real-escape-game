@@ -1,17 +1,12 @@
 @font-face {
     font-family: 'cwTeXKai';
-    src: url('webfont.eot'); /* IE9 Compat Modes */
-    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
-    url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
-    url('webfont.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    src: url('標楷體.ttc');
 }
 
 * {
     box-sizing: border-box;
     background-color:black;
-    font-family: 'Times New Roman', Times, '標楷體', 'cwTeXKai', '微軟正黑體', sans-serif;;
+    font-family: 'Times New Roman', Times, 'cwTeXKai', '微軟正黑體', sans-serif;;
     color: white;
 }
 
