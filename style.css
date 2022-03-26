@@ -1,0 +1,413 @@
+* {
+    box-sizing: border-box;
+    background-color:black;
+    font-family: 'Times New Roman', Times, serif, DFKai-sb, 微軟正黑體;
+    color: white;
+}
+
+header {
+    text-align: center;
+    font-size: 5vw;
+}
+
+p {
+    text-align: center;
+    font-size: 3vw;
+}
+
+input {
+    border-color: gold;
+    font-size: 3vw;
+    text-transform: lowercase;
+}
+
+.grid {
+    display: grid;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    background-color: black;
+    margin: auto;
+}
+
+img {
+    width: 80vw;
+}
+
+
+
+/* next page */
+
+.nextpage {
+    display: none;
+    margin: 0 auto;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    border: 1px solid gold;
+    animation: blink 1.5s infinite;
+}
+  
+.nextpage:hover {
+    cursor: pointer;
+}
+  
+@keyframes blink {
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+  
+.arrow {
+    background: gold;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(40% 30%, 48% 30%, 74% 50%, 48% 70%, 40% 70%, 66% 50%)
+}
+
+/*nextpage--end*/
+
+/*backpack--start*/
+
+#backpack {
+    position: absolute;
+    right: 2vw;
+    top: 2vh;
+    width: 6vh;
+    height: 6vh;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+#backpack:hover {
+    cursor: pointer;
+}
+
+#backpack-icon {
+    object-position: 50% 50%;
+    border-radius: 10%;
+    width: 3vh;
+}
+
+
+#fade {
+    display: none;
+    position: fixed;
+    right: 0vw;
+    top: 0vw;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    background: grey;
+    z-index: 1000;
+}
+
+#item-board {
+    position: absolute;
+    right: 2vw;
+    top: 2vw;
+    width: 0;
+    height: 0;
+    border: gold;
+    z-index: 1001;
+}
+
+#close {
+    position:relative;
+    display: none;
+    align-items: center;
+    justify-items: center;
+    left: 1vw;
+    top: 1vw;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    padding:0;
+    border: 1px solid gold;
+}
+
+#close:hover {
+    cursor: pointer;
+}
+
+.cross {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(25% 20%, 50% 45%, 75% 20%, 80% 25%, 55% 50%, 80% 75%, 75% 80%, 50% 55%, 25% 80%, 20% 75%, 45% 50%, 20% 25%);
+    background: gold;
+}
+
+@keyframes fade-in {
+    100%{
+        opacity: 0.9;
+    }
+}
+
+@keyframes fade-out {
+    0%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes open-backpack {
+    100%{
+        right: 10vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+}
+
+@keyframes close-backpack {
+    0%{
+        right: 10vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+    100%{
+        right: 2vw;
+        top: 2vh;
+        width: 0;
+        height: 0;
+        border-radius: 0;
+    }
+}
+/*backpack--end*/
+
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 9rem;
+    background-color:blueviolet;
+    border-radius: 4.5rem;
+    margin:auto;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-shadow: 0.3rem 0.3rem 0.3rem grey;
+    transition: all 0.3s linear 0s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: red;
+    border-color: red; 
+    transition: all 1s linear 0s;
+}
+
+#screen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1.2;
+    border-style: inset;
+    margin: auto;
+    width: 27rem;
+    height: 7.2rem;
+    background-color: grey;
+}
+
+.digit {
+    position:relative;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    width: 6.3rem;
+    height: 6.3rem;
+    text-align: center;
+    font-size: 3.6rem;
+}
+
+.enterPassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    background-color:dimgray;
+    border: outset;
+    border-radius: 1.5rem;
+    width: 30rem;
+    height: 57rem;
+    margin: auto;
+}
+.enterPassword table{
+    margin: auto;
+    border-style: inset;
+    width: 27rem;
+    height: 45rem;
+    background-color:grey;
+}
+
+.enterPassword td {
+    background-color: blue;
+    width: 8.4rem;
+    height: 8.4rem;
+    border-radius: 1.2rem;
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.enterPassword td:hover, #enter:hover, #instruction:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.enterArrow {
+    display: inline-block;
+    width: 70%;
+    height: 50%;
+    clip-path: polygon(0% 80%, 10% 100%, 10% 86%, 100% 86%, 100% 30%, 97% 30%, 97% 74%, 10% 74%, 10% 60%);
+    background-color: white;
+}
+
+#pillars {
+    grid-template: 15rem 10rem 15rem 10rem 15rem / 15rem 1fr 15rem 1fr 15rem;
+    width:100%;
+    height: 100%;
+}
+
+#pillar1 {
+    background-color: white;
+    grid-area: 1 / 1 / 2 / 2;
+}
+#pillar2 {
+    background-color: white;
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+#pillar3 {
+    background-color: white;
+    grid-area: 1 / 5 / 2 / 6;
+}
+#pillar4 {
+    background-color: white;
+    grid-area: 3 / 1 / 4 / 2;
+}
+#pillar5 {
+    background-color: white;
+    grid-area: 3 / 5 / 4 / 6;
+}
+#pillar6 {
+    background-color: white;
+    grid-area: 5 / 1 / 6 / 2;
+}
+#pillar7 {
+    background-color: white;
+    grid-area: 5 / 3 / 6 / 4;
+}
+#pillar8 {
+    background-color: white;
+    grid-area: 5 / 5 / 6 / 6;
+}
+
+
+
+#instruction {
+    width: 30rem;
+    height: 6rem;
+    border-radius: 0.3rem;
+    margin: 3rem auto;
+    background-color: rebeccapurple;
+}
+
+
+
+@keyframes shake {
+    30% {
+        left: -1rem;
+    }
+    70% {
+        left: 0.5rem;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+/*Mom's diary*/
+
+
+/*Library*/
+
+#library1 {
+    width: 65vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+}
+
+#library2 {
+    width: 91vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+}
+
+#library1 div, #library2 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(6vw,6vh);
+} 
+
+#library1 .border, #library2 .border {
+    border: 1px double gold;
+    font-size: min(4vw,4vh);
+}
+
+form {
+    width: 30vw;
+    margin: 5vw auto;
+}
+
+.blockinput {
+    display: block;
+    width: 30vw;
+    margin: 1vw auto;
+}
+
+@keyframes correct {
+    100% {
+        background: rgb(66, 201, 25);
+    }
+}
+
+@keyframes wrong {
+    0% {
+        background: red;
+    }
+    100% {
+        background: black;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    figure{
+        flex-direction: row;
+    }
+
+    img {
+        width: 40vw;
+    }
+}
+

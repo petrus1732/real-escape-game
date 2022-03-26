@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>圖書館</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+    <body>
+        
+        <header>
+            圖書館
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close" onclick="closeBackpack()"><div class="cross"></div></button>
+            </div>
+            <figure id="backpack" onclick="openBackpack()"><img src="./backpack_redrawn.png" id="backpack-icon"></figure>
+        </header>
+        <main>
+            <div class="grid" id="library1">
+                <div class="border">5,3</div><div class="border">   </div><div class="border">2,1</div><div class="border">2,8</div><div class="border">   </div>
+                <div class="border">   </div><div class="border">3,3</div><div class="border">   </div><div class="border">   </div><div class="border">4,2</div>
+                <div> D </div><div> _ </div><div> _ </div><div> _ </div><div> _ </div>
+            </div>
+            <div class="grid" id="library2">
+                <div class="border">   </div><div class="border">1,1</div><div class="border">   </div><div class="border">4,3</div><div class="border">2,8</div><div class="border">   </div><div class="border">3,10</div>
+                <div class="border">2,1</div><div class="border">   </div><div class="border">4,5</div><div class="border">   </div><div class="border">   </div><div class="border">4,2</div><div class="border">   </div>
+                <div> _ </div><div> _ </div><div> _ </div><div> _ </div><div> O </div><div> _ </div><div> _ </div>
+            </div>
+            <form>
+                <input class="blockinput" id="demon" onchange="check_valid(this)">
+                <br>
+                <input class="blockinput" id="balcony" onchange="check_valid(this)">
+            </form>
+            <button class="nextpage" id="goToSomePlace"><div class="arrow"></div></button>
+    </main>
+    </body>
+    <script src="main.js"></script>
+</html>
