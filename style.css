@@ -1,7 +1,17 @@
+@font-face {
+    font-family: 'cwTeXKai';
+    src: url('webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+    url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+    url('webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 * {
     box-sizing: border-box;
     background-color:black;
-    font-family: 'Times New Roman', Times, serif, DFKai-sb, 微軟正黑體;
+    font-family: 'Times New Roman', Times, cwTeXKai, DFKai-sb, 微軟正黑體;
     color: white;
 }
 
@@ -28,7 +38,7 @@ input {
 figure {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     align-content: space-around;
     background-color: black;
@@ -36,7 +46,8 @@ figure {
 }
 
 img {
-    width: 70vw;
+    width: 80vw;
+    margin: 2vw;
 }
 
 
@@ -407,7 +418,7 @@ form {
     }
 
     img {
-        width: 40vw;
+        width: 30vw;
     }
 }
 
