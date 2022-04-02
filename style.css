@@ -6,13 +6,14 @@
 * {
     box-sizing: border-box;
     background-color:black;
-    font-family: 'Times New Roman', Times, 'cwTeXKi', '微軟正黑體', sans-serif;;
+    font-family: 'Times New Roman', 標楷體, 'cwTeXKi', '微軟正黑體', Times, sans-serif;;
     color: white;
 }
 
 header {
     text-align: center;
     font-size: 5vw;
+    margin: 2vh auto;
 }
 
 p {
@@ -197,6 +198,263 @@ img {
 }
 /*backpack--end*/
 
+/* pillars -- start */
+
+#pillars {
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    width: 75vw;
+    height: 75vw;
+    margin: 5vh auto;
+}
+
+.pillar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    border: 3px solid gold;
+    font-size: 7vw;
+    color: white;
+}
+
+.content {
+    position: absolute;
+    margin: auto 0;
+    width: 13vw;
+    opacity: 0.2;
+}
+
+#pillar1 {
+    border-top-color: brown; 
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#pillar2 {
+    border-right-color: brown;
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+#pillar3 {
+    border-bottom-color: brown; 
+    grid-area: 1 / 5 / 2 / 6;
+}
+#pillar4 {
+    border-left-color: brown; 
+    grid-area: 3 / 1 / 4 / 2;
+}
+#pillar5 {
+    border-right-color: brown;
+    grid-area: 3 / 5 / 4 / 6;
+}
+#pillar6 {
+    border-left-color: brown; 
+    grid-area: 5 / 1 / 6 / 2;
+}
+#pillar7 {
+    border-bottom-color: brown; 
+    grid-area: 5 / 3 / 6 / 4;
+}
+#pillar8 {
+    border-right-color: brown; 
+    grid-area: 5 / 5 / 6 / 6;
+}
+
+#middle {
+    position: relative;
+    grid-area: 3 / 3 / 4 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hint-text {
+    font-size: 3vw;
+    background-color: transparent;
+    color: brown;
+}
+
+#lefttop {
+    position: absolute;
+    left: -1vw;
+    top: -1vw;
+    z-index: 2;
+}
+
+#centertop {
+    position: absolute;   
+    top: -1vw;
+    z-index: 2;
+}
+
+#righttop {
+    position: absolute;
+    right: -1vw;
+    top: -1vw;
+    z-index: 2;
+}
+
+#leftcenter {
+    position: absolute;
+    left: -1vw;
+    z-index: 2;
+}
+
+#rightcenter {
+    position: absolute;
+    right: -1vw;
+    z-index: 2;
+}
+
+#leftbottom {
+    position: absolute;
+    left: -1vw;
+    bottom: -1vw;
+    z-index: 2;
+}
+#centerbottom {
+    position: absolute;
+    bottom: -1vw;
+    z-index: 2;
+}
+#rightbottom {
+    position: absolute;
+    right: -1vw;
+    bottom: -1vw;
+    z-index: 2;
+}
+#art {
+    opacity: 1;
+    z-index: 1;
+    width: 13vw;
+}
+
+.direction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#direction1 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#direction2 {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+#direction3 {
+    align-items: flex-start;
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+#direction4 {
+    align-items: flex-end;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#direction5 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+#direction6 {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+#direction7 {
+    align-items: flex-start;
+    grid-area: 4 / 5 / 5 / 6;
+}
+
+#direction8 {
+    align-items: flex-end;
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+#direction9 {
+    grid-area: 5 / 2 / 6 / 2;
+}
+
+#direction10 {
+    grid-area: 5 / 4 / 6 / 5;
+}
+
+.arrows {
+    width: 46%;
+}
+
+#usury591 {
+    width: 14vw;
+    text-align: right;
+}
+
+/* pillars -- end */
+
+
+
+
+/*Library*/
+
+#library1 {
+    width: 65vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+}
+
+#library2 {
+    width: 91vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+}
+
+#library1 div, #library2 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(6vw,6vh);
+} 
+
+#library1 .border, #library2 .border {
+    border: 1px double gold;
+    font-size: min(4vw,4vh);
+}
+
+form {
+    width: 30vw;
+    margin: 5vw auto;
+}
+
+.blockinput {
+    display: block;
+    width: 30vw;
+    margin: 1vw auto;
+}
+
+@keyframes correct {
+    100% {
+        background: rgb(66, 201, 25);
+    }
+}
+
+@keyframes wrong {
+    0% {
+        background: red;
+    }
+    100% {
+        background: black;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    figure{
+        flex-direction: row;
+    }
+
+    img {
+        width: 30vw;
+    }
+}
+
+/*
 
 .button {
     display: flex;
@@ -288,46 +546,6 @@ img {
     background-color: white;
 }
 
-#pillars {
-    grid-template: 15rem 10rem 15rem 10rem 15rem / 15rem 1fr 15rem 1fr 15rem;
-    width:100%;
-    height: 100%;
-}
-
-#pillar1 {
-    background-color: white;
-    grid-area: 1 / 1 / 2 / 2;
-}
-#pillar2 {
-    background-color: white;
-    grid-area: 1 / 3 / 2 / 4;
-}
-
-#pillar3 {
-    background-color: white;
-    grid-area: 1 / 5 / 2 / 6;
-}
-#pillar4 {
-    background-color: white;
-    grid-area: 3 / 1 / 4 / 2;
-}
-#pillar5 {
-    background-color: white;
-    grid-area: 3 / 5 / 4 / 6;
-}
-#pillar6 {
-    background-color: white;
-    grid-area: 5 / 1 / 6 / 2;
-}
-#pillar7 {
-    background-color: white;
-    grid-area: 5 / 3 / 6 / 4;
-}
-#pillar8 {
-    background-color: white;
-    grid-area: 5 / 5 / 6 / 6;
-}
-
 
 
 #instruction {
@@ -352,68 +570,5 @@ img {
     }
 }
 
-/*Mom's diary*/
-
-
-/*Library*/
-
-#library1 {
-    width: 65vw;
-    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw;
-    margin: 5vh auto;
-}
-
-#library2 {
-    width: 91vw;
-    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
-    margin: 5vh auto;
-}
-
-#library1 div, #library2 div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: min(6vw,6vh);
-} 
-
-#library1 .border, #library2 .border {
-    border: 1px double gold;
-    font-size: min(4vw,4vh);
-}
-
-form {
-    width: 30vw;
-    margin: 5vw auto;
-}
-
-.blockinput {
-    display: block;
-    width: 30vw;
-    margin: 1vw auto;
-}
-
-@keyframes correct {
-    100% {
-        background: rgb(66, 201, 25);
-    }
-}
-
-@keyframes wrong {
-    0% {
-        background: red;
-    }
-    100% {
-        background: black;
-    }
-}
-
-@media screen and (min-width: 760px) {
-    figure{
-        flex-direction: row;
-    }
-
-    img {
-        width: 30vw;
-    }
-}
+*/
 

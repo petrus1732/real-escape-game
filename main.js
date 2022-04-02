@@ -1,5 +1,5 @@
 /* global reacion -- start*/
-
+let backpack = [];
 
 const nextpage = (loc) => {
     window.location = './' + loc + '.html';
@@ -24,6 +24,7 @@ const closeBackpack = () => {
 /* library -- start */
 
 const state = {
+    "pass_usury591": false,
     "pass_不願面對的真相": false,
     "pass_demon": false,
     "pass_balcony": false
@@ -34,6 +35,9 @@ const check_valid = (e) => {
         e.style.animation = "correct 1s forwards";
         e.setAttribute("readOnly",true);
         state["pass_"+e.id] = true;
+        if (state["pass_usury591"]) {
+            setTimeout(()=>document.getElementById("goToSomePlace").style.display = "block",1000);
+        }
         if (state["pass_不願面對的真相"]) {
             setTimeout(()=>document.getElementById("goToLibrary").style.display = "block",1000);
         }

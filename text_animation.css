@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
+  --spc: 0.1s; /*second per letter*/
+  --cpl: 12; /*character per line*/ 
 }
+
 
 body{
   text-align: center;
@@ -28,12 +31,12 @@ body{
   position: relative;
   padding: 0;
   width: 60vw;
-  font-size: 6vw;
+  font-size: 5vw;
   white-space: nowrap;
 }
 span {
   display: inline-block;
-  width: 6vw;
+  width: 5vw;
 }
 
 .dynamic-text::before{
@@ -44,27 +47,26 @@ span {
   bottom: 0;
   left:0;
   background: black;
-  animation: typewriter 1.5s steps(10) forwards;
+  animation: typewriter calc(var(--cpl)*var(--spc)) steps(var(--cpl)) forwards;
 }
 
-#s1::before {
+
+.first::before {
   animation-delay: 0s;
 }
-#s2::before {
-  animation-delay: 1.5s;
+
+.second::before {
+  animation-delay: calc(var(--spc)*var(--cpl));
 }
-#s3::before {
-  animation-delay: 3s;
+
+.third::before {
+  animation-delay: calc(var(--spc)*var(--cpl)*2);
 }
-#s4::before {
-  animation-delay: 4.5s;
+
+.fourth::before {
+  animation-delay: calc(var(--spc)*var(--cpl)*3);
 }
-#s5::before {
-  animation-delay: 0s;
-}
-#s6::before {
-  animation-delay: 1.5s;
-}
+
 
 @keyframes typewriter{
   100%{

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>title</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <header>
+            債主地盤
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close" onclick="closeBackpack()"><div class="cross"></div></button>
+            </div>
+            <figure id="backpack" onclick="openBackpack()"><img src="./backpack_redrawn.png" id="backpack-icon"></figure>
+        </header>
+        <main>
+            <figure>
+                <img src="binary.png">
+            </figure>
+            <div class="grid" id="pillars">
+                <div class="pillar" id="pillar1">34<img src="letter.png" class="content" id="content1"></div>
+                <div class="direction" id="direction1"><img src="rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar2">9<img src="letter.png" class="content" id="content2"></div>
+                <div class="direction" id="direction2"><img src="rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar3">34<img src="letter.png" class="content" id="content3"></div>
+                <div class="direction" id="direction3"><img src="downleftarrow.png" class="arrows"></div>
+                <div class="direction" id="direction4"><img src="leftdownarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar4">26<img src="letter.png" class="content" id="content4"></div>
+                <div class="direction" id="direction5"><img src="rightarrow.png" class="arrows"></div>
+                <div class="direction" id="direction6"><img src="rightarrow.png" class="arrows"></div>
+                <div id="middle">
+                    <span class="hint-text" id="lefttop">u</span>
+                    <span class="hint-text" id="centertop">●</span>
+                    <span class="hint-text" id="righttop">●</span>
+                    <span class="hint-text" id="leftcenter">●</span>
+                    <span class="hint-text" id="rightcenter">●</span>
+                    <span class="hint-text" id="leftbottom">5</span>
+                    <span class="hint-text" id="centerbottom">★</span>
+                    <span class="hint-text" id="rightbottom">★</span>
+                    <img src="./installaton_art.png" class="content" id="art">
+                </div>
+                <div class="pillar" id="pillar5">53<img src="letter.png" class="content" id="content5"></div>
+                <div class="direction" id="direction7"><img src="downleftarrow.png" class="arrows"></div>
+                <div class="direction" id="direction8"><img src="leftdownarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar6">15<img src="number.png" class="content" id="content6"></div>
+                <div class="direction" id="direction9"><img src="rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar7">23<img src="number.png" class="content" id="content7"></div>
+                <div class="direction" id="direction10"><img src="rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar8">2<img src="number.png" class="content" id="content8"></div>
+            </div>
+            <p>電子郵件: <input id="usury591" onchange="check_valid(this)">@gmail.com</p>
+            <button class="nextpage" id="goToSomePlace"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>
