@@ -212,50 +212,51 @@ img {
     align-items: center;
     justify-items: center;
     justify-content: center;
-    border: 3px solid gold;
+    border: 3px solid white;
     font-size: 7vw;
-    color: white;
+    color: gold;
+    text-shadow: 0.1rem;
 }
 
 .content {
     position: absolute;
     margin: auto 0;
     width: 13vw;
-    opacity: 0.2;
+    opacity: 0.25;
 }
 
 #pillar1 {
-    border-top-color: brown; 
+    border-top-color: rgb(100, 100, 100); 
     grid-area: 1 / 1 / 2 / 2;
 }
 
 #pillar2 {
-    border-right-color: brown;
+    border-right-color: rgb(100, 100, 100);
     grid-area: 1 / 3 / 2 / 4;
 }
 
 #pillar3 {
-    border-bottom-color: brown; 
+    border-bottom-color: rgb(100, 100, 100); 
     grid-area: 1 / 5 / 2 / 6;
 }
 #pillar4 {
-    border-left-color: brown; 
+    border-left-color: rgb(100, 100, 100); 
     grid-area: 3 / 1 / 4 / 2;
 }
 #pillar5 {
-    border-right-color: brown;
+    border-right-color: rgb(100, 100, 100);
     grid-area: 3 / 5 / 4 / 6;
 }
 #pillar6 {
-    border-left-color: brown; 
+    border-left-color: rgb(100, 100, 100); 
     grid-area: 5 / 1 / 6 / 2;
 }
 #pillar7 {
-    border-bottom-color: brown; 
+    border-bottom-color: rgb(100, 100, 100); 
     grid-area: 5 / 3 / 6 / 4;
 }
 #pillar8 {
-    border-right-color: brown; 
+    border-right-color: rgb(100, 100, 100); 
     grid-area: 5 / 5 / 6 / 6;
 }
 
@@ -270,7 +271,7 @@ img {
 .hint-text {
     font-size: 3vw;
     background-color: transparent;
-    color: brown;
+    color: rgb(100, 100, 100);
 }
 
 #lefttop {
@@ -383,7 +384,7 @@ img {
 }
 
 #usury591 {
-    width: 14vw;
+    width: 15vw;
     text-align: right;
 }
 
