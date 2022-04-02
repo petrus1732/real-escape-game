@@ -1,3 +1,3 @@
-- This is an unfinished real escape game designed to be played with cellphone
+- This is an unfinished real escape game designed to be played with cellphone or laptop.
 - language: Chinese
-- completion rate: 10%
+- completion rate: 50%
