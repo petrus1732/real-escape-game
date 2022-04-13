@@ -11,10 +11,11 @@
         <header>
             媽媽的日記
             <div id="fade"></div>
-        <div id="item-board">
-            <button id="close" onclick="closeBackpack()"><div class="cross"></div></button>
-        </div>
-        <figure id="backpack" onclick="openBackpack()"><img src="./backpack_redrawn.png" id="backpack-icon"></figure>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./backpack_redrawn.png" class="icon"></figure>
         </header>
         <main>
             <figure>
