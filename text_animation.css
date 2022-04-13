@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  --spc: 0.1s; /*second per letter*/
+  --cpl: 12; /*character per line*/ 
+}
+
+
+body{
+  text-align: center;
+  background: black;
+  font-family: 標楷體, sans-serif;
+  color: white;
+  height: 90vh;
+}
+
+.container{
+  display: none;
+  flex-direction: column;
+  margin: 20vh auto 5vh;
+  height: 40vw;
+  width: 60vw;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.dynamic-text{
+  display: flex;
+  background: black;
+  text-align: justify;
+  position: relative;
+  padding: 0;
+  width: 60vw;
+  font-size: 5vw;
+  white-space: nowrap;
+}
+span {
+  display: inline-block;
+  width: 5vw;
+}
+
+.dynamic-text::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left:0;
+  background: black;
+  animation: typewriter calc(var(--cpl)*var(--spc)) steps(var(--cpl)) forwards;
+}
+
+
+.first::before {
+  animation-delay: 0s;
+}
+
+.second::before {
+  animation-delay: calc(var(--spc)*var(--cpl));
+}
+
+.third::before {
+  animation-delay: calc(var(--spc)*var(--cpl)*2);
+}
+
+.fourth::before {
+  animation-delay: calc(var(--spc)*var(--cpl)*3);
+}
+
+
+@keyframes typewriter{
+  100%{
+    left: 100%;
+  }
+}
+
+button {
+  background: black;
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  border: 1px solid gold;
+  animation: blink 1.5s infinite;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0%{
+    opacity: 0.5;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.5;
+  }
+}
+
+#arrow {
+  background: gold;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(40% 30%, 48% 30%, 74% 50%, 48% 70%, 40% 70%, 66% 50%)
+}
+
+
+
+

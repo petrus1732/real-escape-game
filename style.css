@@ -1,0 +1,677 @@
+@font-face {
+    font-family: 'cwTeXKi';
+    src: url('./標楷體.ttc');
+}
+
+* {
+    box-sizing: border-box;
+    background-color:black;
+    font-family: 'Times New Roman', 標楷體, 'cwTeXKi', '微軟正黑體', Times, sans-serif;;
+    color: white;
+}
+
+header {
+    text-align: center;
+    font-size: 5vw;
+    margin: 2vh auto;
+}
+
+p {
+    text-align: center;
+    font-size: 3vw;
+}
+
+input {
+    border-color: gold;
+    font-size: 3vw;
+    text-transform: lowercase;
+}
+
+.grid {
+    display: grid;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    background-color: black;
+    margin: auto;
+}
+
+img {
+    width: 80vw;
+    margin: 2vw;
+}
+
+
+
+/* next page */
+
+.nextpage {
+    display: none;
+    margin: 0 auto;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    border: 1px solid gold;
+    animation: blink 1.5s infinite;
+}
+  
+.nextpage:hover {
+    cursor: pointer;
+}
+  
+@keyframes blink {
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+  
+.arrow {
+    background: gold;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(40% 30%, 48% 30%, 74% 50%, 48% 70%, 40% 70%, 66% 50%)
+}
+
+/*nextpage--end*/
+
+/*backpack and hint--start*/
+
+#backpack, #hint {
+    position: absolute;
+    top: 2vh;
+    width: max(6vh, 6vw);
+    height: max(6vh, 6vw);
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+#backpack {
+    right: 2vw;
+}
+
+#hint {
+    left: 2vw;
+}
+
+#backpack:hover, #hint:hover {
+    cursor: pointer;
+}
+
+.icon {
+    object-position: 50% 50%;
+    border-radius: 10%;
+    width: max(3vh, 3vw);
+}
+
+#fade {
+    display: none;
+    position: fixed;
+    right: 0vw;
+    top: 0vw;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    background: grey;
+    z-index: 1000;
+}
+
+#item-board, #hint-board {
+    position: absolute;
+    top: 3vw;
+    width: 0;
+    height: 0;
+    border: gold;
+    z-index: 1001;
+}
+
+#item-board {
+    right: 3vw;
+}
+
+#hint-board {
+    left: 3vw;
+}
+
+#close-item, #close-hint {
+    position:relative;
+    display: none;
+    align-items: center;
+    justify-items: center;
+    left: 1vw;
+    top: 1vw;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    padding:0;
+    border: 1px solid gold;
+}
+
+#close-item:hover, #close-hint:hover {
+    cursor: pointer;
+}
+
+#hint-container {
+    display: none;
+    background-color: transparent;
+    flex-direction: column;
+    width:100%;
+    height:90%;
+}
+
+.expand {
+    display:inline-block;
+    background-color: white;
+    width: 2vw;
+    height: 2vw;
+    clip-path: polygon(20% 20%, 80% 20%, 50% 80%);
+}
+
+.hints {
+    background-color: rgb(50, 50, 100);
+    font-size: 3vw;
+    border: 1px outset gold;
+    border-radius: 1vw;
+    margin: 2vw 1vw;
+}
+
+.hints:hover {
+    cursor: pointer;
+}
+
+.cross {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(25% 20%, 50% 45%, 75% 20%, 80% 25%, 55% 50%, 80% 75%, 75% 80%, 50% 55%, 25% 80%, 20% 75%, 45% 50%, 20% 25%);
+    background: gold;
+}
+
+.hint-content {
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    background: rgb(70,70,70);
+    height: 0;
+    padding: auto;
+    font-size: 2.5vw;
+    color: transparent;
+}
+
+@keyframes fade-in {
+    100%{
+        opacity: 0.9;
+    }
+}
+
+@keyframes fade-out {
+    0%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes opening-item {
+    100%{
+        right: 10vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+}
+
+@keyframes closing-item {
+    0%{
+        right: 10vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+    100%{
+        right: 3vw;
+        top: 3vh;
+        width: 0;
+        height: 0;
+        border-radius: 0;
+    }
+}
+
+@keyframes opening-hint {
+    100%{
+        left: 10vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+}
+
+@keyframes closing-hint {
+    0%{
+        left: 10vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+    100%{
+        left: 3vw;
+        top: 3vh;
+        width: 0;
+        height: 0;
+        border-radius: 0;
+    }
+}
+
+@keyframes expanding {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 5vw;
+    }
+}
+
+@keyframes gathering {
+    0% {
+        height: 5vw;
+    }
+    100% {
+        height: 0;
+    }
+}
+/* backpack and hint -- end */
+
+
+
+/* pillars -- start */
+
+#pillars {
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    width: 75vw;
+    height: 75vw;
+    margin: 5vh auto;
+}
+
+.pillar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    font-size: 7vw;
+    color: gold;
+    text-shadow: 0.1rem;
+}
+
+.content {
+    position: absolute;
+    margin: auto 0;
+    width: 13vw;
+    opacity: 0.25;
+}
+
+#pillar1 {
+    border-top-color: rgb(100, 100, 100); 
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#pillar2 {
+    border-right-color: rgb(100, 100, 100);
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+#pillar3 {
+    border-bottom-color: rgb(100, 100, 100); 
+    grid-area: 1 / 5 / 2 / 6;
+}
+#pillar4 {
+    border-left-color: rgb(100, 100, 100); 
+    grid-area: 3 / 1 / 4 / 2;
+}
+#pillar5 {
+    border-right-color: rgb(100, 100, 100);
+    grid-area: 3 / 5 / 4 / 6;
+}
+#pillar6 {
+    border-left-color: rgb(100, 100, 100); 
+    grid-area: 5 / 1 / 6 / 2;
+}
+#pillar7 {
+    border-bottom-color: rgb(100, 100, 100); 
+    grid-area: 5 / 3 / 6 / 4;
+}
+#pillar8 {
+    border-right-color: rgb(100, 100, 100); 
+    grid-area: 5 / 5 / 6 / 6;
+}
+
+#middle {
+    position: relative;
+    grid-area: 3 / 3 / 4 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hint-text {
+    font-size: 3vw;
+    background-color: transparent;
+    color: rgb(100, 100, 100);
+}
+
+#lefttop {
+    position: absolute;
+    left: -1vw;
+    top: -1vw;
+    z-index: 2;
+}
+
+#centertop {
+    position: absolute;   
+    top: -1vw;
+    z-index: 2;
+}
+
+#righttop {
+    position: absolute;
+    right: -1vw;
+    top: -1vw;
+    z-index: 2;
+}
+
+#leftcenter {
+    position: absolute;
+    left: -1vw;
+    z-index: 2;
+}
+
+#rightcenter {
+    position: absolute;
+    right: -1vw;
+    z-index: 2;
+}
+
+#leftbottom {
+    position: absolute;
+    left: -1vw;
+    bottom: -1vw;
+    z-index: 2;
+}
+#centerbottom {
+    position: absolute;
+    bottom: -1vw;
+    z-index: 2;
+}
+#rightbottom {
+    position: absolute;
+    right: -1vw;
+    bottom: -1vw;
+    z-index: 2;
+}
+#art {
+    opacity: 1;
+    z-index: 1;
+    width: 13vw;
+}
+
+.direction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#direction1 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#direction2 {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+#direction3 {
+    align-items: flex-start;
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+#direction4 {
+    align-items: flex-end;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#direction5 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+#direction6 {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+#direction7 {
+    align-items: flex-start;
+    grid-area: 4 / 5 / 5 / 6;
+}
+
+#direction8 {
+    align-items: flex-end;
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+#direction9 {
+    grid-area: 5 / 2 / 6 / 2;
+}
+
+#direction10 {
+    grid-area: 5 / 4 / 6 / 5;
+}
+
+.arrows {
+    width: 46%;
+}
+
+#usury591 {
+    width: 15vw;
+    text-align: right;
+}
+
+/* pillars -- end */
+
+
+
+
+/*Library*/
+
+#library1 {
+    width: 65vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+}
+
+#library2 {
+    width: 91vw;
+    grid-template: 8vh 8vh 8vh / 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
+    margin: 5vh auto;
+}
+
+#library1 div, #library2 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(6vw,6vh);
+} 
+
+#library1 .border, #library2 .border {
+    border: 1px double gold;
+    font-size: min(4vw,4vh);
+}
+
+form {
+    width: 30vw;
+    margin: 5vw auto;
+}
+
+.blockinput {
+    display: block;
+    width: 30vw;
+    margin: 1vw auto;
+}
+
+@keyframes correct {
+    100% {
+        background: rgb(66, 201, 25);
+    }
+}
+
+@keyframes wrong {
+    0% {
+        background: red;
+    }
+    100% {
+        background: black;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    figure{
+        flex-direction: row;
+    }
+
+    img {
+        width: 30vw;
+    }
+}
+
+#symbol{
+    width: 70%;
+}
+
+/*
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 9rem;
+    background-color:blueviolet;
+    border-radius: 4.5rem;
+    margin:auto;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-shadow: 0.3rem 0.3rem 0.3rem grey;
+    transition: all 0.3s linear 0s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: red;
+    border-color: red; 
+    transition: all 1s linear 0s;
+}
+
+#screen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1.2;
+    border-style: inset;
+    margin: auto;
+    width: 27rem;
+    height: 7.2rem;
+    background-color: grey;
+}
+
+.digit {
+    position:relative;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    width: 6.3rem;
+    height: 6.3rem;
+    text-align: center;
+    font-size: 3.6rem;
+}
+
+.enterPassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    background-color:dimgray;
+    border: outset;
+    border-radius: 1.5rem;
+    width: 30rem;
+    height: 57rem;
+    margin: auto;
+}
+.enterPassword table{
+    margin: auto;
+    border-style: inset;
+    width: 27rem;
+    height: 45rem;
+    background-color:grey;
+}
+
+.enterPassword td {
+    background-color: blue;
+    width: 8.4rem;
+    height: 8.4rem;
+    border-radius: 1.2rem;
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.enterPassword td:hover, #enter:hover, #instruction:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.enterArrow {
+    display: inline-block;
+    width: 70%;
+    height: 50%;
+    clip-path: polygon(0% 80%, 10% 100%, 10% 86%, 100% 86%, 100% 30%, 97% 30%, 97% 74%, 10% 74%, 10% 60%);
+    background-color: white;
+}
+
+
+
+#instruction {
+    width: 30rem;
+    height: 6rem;
+    border-radius: 0.3rem;
+    margin: 3rem auto;
+    background-color: rebeccapurple;
+}
+
+
+
+@keyframes shake {
+    30% {
+        left: -1rem;
+    }
+    70% {
+        left: 0.5rem;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+*/
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>圖書館</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+    <body>
+        
+        <header>
+            沙坑
+            <div id="fade"></div>
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./backpack_redrawn.png" class="icon"></figure>
+            <div id="hint-board">
+                <button id="close-hint" onclick="closes('hint', 4)"><div class="cross"></div></button>
+                <div id="hint-container">
+                    <div class="hints" onclick="clickHint(this,0)">
+                        提示1
+                        <div class="expand" id="expand1"></div>
+                        <div class="hint-content" id="hint-content1">符號與柱子對應</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,1)">
+                        提示2
+                        <div class="expand" id="expand2"></div>
+                        <div class="hint-content" id="hint-content2">一個圈代表一個英文字</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,2)">
+                        提示3
+                        <div class="expand" id="expand3"></div>
+                        <div class="hint-content" id="hint-content3">文字順序與彩虹顏色相關</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,3)">
+                        答案
+                        <div class="expand" id="expand4"></div>
+                        <div class="hint-content" id="hint-content3">reminiscence</div>
+                    </div>
+                </div>
+            </div>
+            <figure id="hint" onclick="opens('hint')"><img src="./hint.png" class="icon"></figure>
+        </header>
+        <main>
+            <figure><img src="symbols.jpg" id="symbol"></figure>          
+            <button class="nextpage" id="goToSomePlace"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>

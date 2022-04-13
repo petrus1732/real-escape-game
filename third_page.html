@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>實境解謎</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <h1>密碼</h1>
+        </header>
+        <main>
+            <div class="enterPassword">
+                <div id="screen">
+                    <div class='digit' id="d1"><p class="shake"></p></div>
+                    <div class='digit' id="d2"><p class="shake"></p></div>
+                    <div class='digit' id="d3"><p class="shake"></p></div>
+                    <div class='digit' id="d4"><p class="shake"></p></div>
+                </div>
+                <table>
+                    <tr>
+                        <td onclick="password(this)">1</td>
+                        <td onclick="password(this)">2</td>
+                        <td onclick="password(this)">3</td>
+                    </tr>
+                    <tr>
+                        <td onclick="password(this)">4</td>
+                        <td onclick="password(this)">5</td>
+                        <td onclick="password(this)">6</td>
+                    </tr>
+                    <tr>
+                        <td onclick="password(this)">7</td>
+                        <td onclick="password(this)">8</td>
+                        <td onclick="password(this)">9</td>
+                    </tr>
+                    <tr>
+                        <td onclick="password(this)">0</td>
+                        <td onclick="del()" id="del">del</td>
+                        <td onclick="clr()" id="clr">clr</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" onclick="checkAnswer()" id="enter">
+                            <div class="enterArrow"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="instruction"></div>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>

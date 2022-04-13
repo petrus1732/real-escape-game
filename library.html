@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>圖書館</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+    <body>
+        
+        <header>
+            圖書館
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./backpack_redrawn.png" class="icon"></figure>
+            <div id="hint-board">
+                <button id="close-hint" onclick="closes('hint', 4)"><div class="cross"></div></button>
+                <div id="hint-container">
+                    <div class="hints" onclick="clickHint(this,0)">
+                        提示1
+                        <div class="expand" id="expand1"></div>
+                        <div class="hint-content" id="hint-content1">與英文相關</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,1)">
+                        提示2
+                        <div class="expand" id="expand2"></div>
+                        <div class="hint-content" id="hint-content2">位置上下具有對應關係</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,2)">
+                        提示3
+                        <div class="expand" id="expand3"></div>
+                        <div class="hint-content" id="hint-content3">第二個數字代表第幾個字母</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,3)">
+                        答案
+                        <div class="expand" id="expand4"></div>
+                        <div class="hint-content" id="hint-content3">demon / balcony</div>
+                    </div>
+                </div>
+            </div>
+            <figure id="hint" onclick="opens('hint')"><img src="./hint.png" class="icon"></figure>
+        </header>
+        <main>
+            <div class="grid" id="library1">
+                <div class="border">5,3</div><div class="border">   </div><div class="border">2,1</div><div class="border">2,8</div><div class="border">   </div>
+                <div class="border">   </div><div class="border">3,3</div><div class="border">   </div><div class="border">   </div><div class="border">4,2</div>
+                <div> D </div><div> _ </div><div> _ </div><div> _ </div><div> _ </div>
+            </div>
+            <div class="grid" id="library2">
+                <div class="border">   </div><div class="border">1,1</div><div class="border">   </div><div class="border">4,3</div><div class="border">2,8</div><div class="border">   </div><div class="border">3,10</div>
+                <div class="border">2,1</div><div class="border">   </div><div class="border">4,5</div><div class="border">   </div><div class="border">   </div><div class="border">4,2</div><div class="border">   </div>
+                <div> _ </div><div> _ </div><div> _ </div><div> _ </div><div> O </div><div> _ </div><div> _ </div>
+            </div>
+            <form>
+                <input class="blockinput" id="demon" onchange="check_valid(this)">
+                <br>
+                <input class="blockinput" id="balcony" onchange="check_valid(this)">
+            </form>
+            <button class="nextpage" id="goToSomePlace"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>
