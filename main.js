@@ -77,6 +77,9 @@ const check_valid = (e) => {
         if (state["pass_demon"] && state["pass_balcony"]) {
             setTimeout(()=>document.getElementById("goToSomePlace").style.display = "block",1000);
         }
+        if (state["pass_reminiscence"]){
+            setTimeout(()=>document.getElementById("goToSomePlace").style.display = "block",1000);
+        }
     }
     else {
         e.style.animation = "wrong 0.7s ease-out forwards";
@@ -145,3 +148,74 @@ const checkAnswer = () => {
     }
 }
 
+let pos = [1,1];
+let wordLength = 4;
+let guess = ['','','','',''];
+let submit = ['','','','',''];
+const word = "GONE";
+const press = (e)=> {
+    if (e.id === "ENTER") {
+        if (pos[1] === 5){
+            let used = [false,false,false,false];
+            let color = ["#3a3a3c","#3a3a3c","#3a3a3c","#3a3a3c"];
+            for (let i=0; i<wordLength; i++) {
+                if (word[i] === submit[i]) {
+                    color[i] = "#538d4e";
+                    used[i] = true;
+                }
+            }
+            for (let i = 0; i < wordLength; i++) {
+                for (let j = 0; j < wordLength; j++) {
+                    if (submit[i] === word[j] && !used[j]) {
+                        color[i] = "#b59f3b";
+                    }
+                }
+            }
+            for (let i = 0; i < wordLength; i++) {
+                setTimeout(() => {
+                    document.getElementById(('g' + pos[0]) + (i+1)).style.animation = "flip 0.5s";
+                }, 300*i);
+                setTimeout(() => {
+                    document.getElementById(('g' + pos[0]) + (i+1)).style.backgroundColor = color[i];
+                    document.getElementById(('g' + pos[0]) + (i+1)).style.borderColor = color[i];
+                }, 300*i + 150);
+            }
+            for (let i = 0; i < wordLength; i++) {
+                document.getElementById(submit[i]).style.backgroundColor = color[i];
+            }
+            if (color.every((c) => c==='#538d4e')) {
+                for (let i = 0; i < wordLength; i++) {
+                    setTimeout(() => {
+                        document.getElementById(('g' + pos[0]) + (i+1)).style.animation = "bingo 0.5s ease-out";
+                    }, 300*i + 1500);
+                }
+            }else {
+                setTimeout(() => {
+                    let newGuess = document.createElement("div");
+                    newGuess.id = "guess" + (++pos[0]);
+                    newGuess.className = "guess";
+                    document.getElementById('answer-board').appendChild(newGuess);
+                    for (let i = 0; i < wordLength; i++) {
+                        guess[i] = document.createElement("div");
+                        guess[i].id = ('g'+ pos[0]) + (i+1);
+                        guess[i].className = "guess-letter";
+                        newGuess.appendChild(guess[i]);
+                    }
+                    pos[1] = 1;
+                }, 2000);
+            }
+        }
+    }
+    else if(e.id === "delete") {
+        pos[1] = pos[1]>1? pos[1]-1 : 1;
+        document.getElementById('g' + pos[0] + pos[1]).innerText = '';
+        document.getElementById('g' + pos[0] + pos[1]).style.borderColor = "#3a3a3c"
+    }
+    else {
+        document.getElementById('g' + pos[0] + pos[1]).innerText = e.id;
+        document.getElementById('g' + pos[0] + pos[1]).style.animation = "magnify 0.15s"
+        submit[pos[1]-1] = e.id; 
+        document.getElementById('g' + pos[0] + pos[1]).style.borderColor = "#787c7e"
+        if (pos[1]<5) pos[1]++;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>信</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
+        </header>
+        <div id="answer-board">
+            <div class="guess" id="guess1">
+                <div class="guess-letter" id="g11"></div>
+                <div class="guess-letter" id="g12"></div>
+                <div class="guess-letter" id="g13"></div>
+                <div class="guess-letter" id="g14"></div>
+            </div>
+        </div>
+        <div class="keyboard">
+            <div class="letter" id="Q" onclick="press(this)">Q</div>
+            <div class="letter" id="W" onclick="press(this)">W</div>
+            <div class="letter" id="E" onclick="press(this)">E</div>
+            <div class="letter" id="R" onclick="press(this)">R</div>
+            <div class="letter" id="T" onclick="press(this)">T</div>
+            <div class="letter" id="Y" onclick="press(this)">Y</div>
+            <div class="letter" id="U" onclick="press(this)">U</div>
+            <div class="letter" id="I" onclick="press(this)">I</div>
+            <div class="letter" id="O" onclick="press(this)">O</div>
+            <div class="letter" id="P" onclick="press(this)">P</div>
+            <div class="letter" id="A" onclick="press(this)">A</div>
+            <div class="letter" id="S" onclick="press(this)">S</div>
+            <div class="letter" id="D" onclick="press(this)">D</div>
+            <div class="letter" id="F" onclick="press(this)">F</div>
+            <div class="letter" id="G" onclick="press(this)">G</div>
+            <div class="letter" id="H" onclick="press(this)">H</div>
+            <div class="letter" id="J" onclick="press(this)">J</div>
+            <div class="letter" id="K" onclick="press(this)">K</div>
+            <div class="letter" id="L" onclick="press(this)">L</div>
+            <div class="letter" id="ENTER" onclick="press(this)">ENTER</div>
+            <div class="letter" id="Z" onclick="press(this)">Z</div>
+            <div class="letter" id="X" onclick="press(this)">X</div>
+            <div class="letter" id="C" onclick="press(this)">C</div>
+            <div class="letter" id="V" onclick="press(this)">V</div>
+            <div class="letter" id="B" onclick="press(this)">B</div>
+            <div class="letter" id="N" onclick="press(this)">N</div>
+            <div class="letter" id="M" onclick="press(this)">M</div>
+            <div class="letter" id="delete" onclick="press(this)"></div>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>
