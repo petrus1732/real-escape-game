@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>實境解謎</title>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>塵封記憶</title>
         <link href='./style.css' rel='stylesheet'>
     </head>
-
     <body>
-        <header>
-            名稱
-        </header>
-        <main>
-            <figure>
-                <img src=".\test_picture.png" id="test">
-            </figure>
-            <button class="button"  onclick="goToSecondPage()">下一頁</button>
-        </main>
+        <figure id="cover">
+            <img src="./image/cover.jpg">
+        </figure>
+        <button onclick="nextpage('instruction_page')" class="nextpage-show" id="cover-arrow"><div class="arrow"></div></button>
     </body>
     <script src="main.js"></script>
 </html>

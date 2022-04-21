@@ -24,7 +24,19 @@ p {
 input {
     border-color: gold;
     font-size: 3vw;
+    width: 25vw;
     text-transform: lowercase;
+}
+
+form {
+    width: 30vw;
+    margin: 5vw auto;
+}
+
+.block-input {
+    display: block;
+    width: 30vw;
+    margin: 1vw auto;
 }
 
 .grid {
@@ -32,30 +44,128 @@ input {
 }
 
 figure {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: space-around;
-    background-color: black;
+    background-color: transparent;
     margin: auto;
+    font-size: 3vw;
+}
+
+.whole-page {
+    height: 70vh;
+}
+
+.in-backpack {
+    width: 20vw;
+    height: 20vw;
+    margin: 5vw 2vw 0;
 }
 
 img {
+    display: block;
     width: 80vw;
-    margin: 2vw;
+    margin: 2vw auto;
+    background-color: transparent;
 }
 
+.long-img {
+    width: auto;
+    height: 80%;
+}
 
+.whole-page .long-img{
+    height:80%;
+}
+
+.wide-img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 3vw;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* cover */
+
+#cover {
+    position: fixed;
+    padding-top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#cover img {
+    filter:opacity(0.9);
+}
+
+#cover-arrow {
+    position: fixed;
+    left: 50%;
+    margin-left: -3vw;
+    z-index: 2;
+    margin-top: 70vh;
+}
+/* cover end
+
+/* instruction page -- start */
+
+#instruction-container {
+    margin-top: 15vw;
+}
+
+.instruction {
+    font-size: 6vw;
+    opacity: 0;
+}
+
+#I1 {
+    color: gold;
+}
+
+#I6 {
+    animation: color-blink 1.5s infinite;
+}
+
+#進入遊戲 {
+    display: none;
+}
+
+@keyframes show-up{
+    100% {
+        opacity: 1;
+    }
+}
+
+/* instructino page -- end */
 
 /* next page */
 
 .nextpage {
     display: none;
-    margin: 0 auto;
+    margin: 3vh auto 0;
     width: 6vh;
     height: 6vh;
     border-radius: 50%;
+    border: 1px solid gold;
+    animation: blink 1.5s infinite;
+}
+
+.nextpage-show {
+    display: block;
+    margin: 3vh auto 0;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    background-color: transparent;
     border: 1px solid gold;
     animation: blink 1.5s infinite;
 }
@@ -64,15 +174,21 @@ img {
     cursor: pointer;
 }
   
-@keyframes blink {
-    0%{
-        opacity: 0.5;
-    }
+@keyframes color-blink {
     50%{
-        opacity: 1;
+        color: rgba(255,255,255,0.5);
     }
-    100%{
-        opacity: 0.5;
+}
+
+@keyframes blink {
+    50%{
+        border-color: rgba(255,215,0,0.5);
+    }
+}
+
+@keyframes white-blink {
+    50%{
+        border-color: rgba(255,255,255,0.5);
     }
 }
   
@@ -85,11 +201,10 @@ img {
 
 /*nextpage--end*/
 
-/*backpack--start*/
+/*backpack and hint -- start*/
 
-#backpack {
+#backpack, #hint {
     position: absolute;
-    right: 2vw;
     top: 2vh;
     width: max(6vh, 6vw);
     height: max(6vh, 6vw);
@@ -97,18 +212,25 @@ img {
     border-radius: 50%;
 }
 
-#backpack:hover {
+#backpack {
+    right: 2vw;
+}
+
+#hint {
+    left: 2vw;
+}
+
+#backpack:hover, #hint:hover {
     cursor: pointer;
 }
 
-#backpack-icon {
+.icon {
     object-position: 50% 50%;
     border-radius: 10%;
     width: max(3vh, 3vw);
 }
 
-
-#fade {
+#fade, #fade2 {
     display: none;
     position: fixed;
     right: 0vw;
@@ -120,17 +242,35 @@ img {
     z-index: 1000;
 }
 
-#item-board {
+#fade2 {
+    opacity: 0.9;
+}
+
+#item-board, #hint-board {
     position: absolute;
-    right: 2vw;
-    top: 2vw;
+    top: 3vw;
     width: 0;
     height: 0;
     border: gold;
     z-index: 1001;
 }
 
-#close {
+#item-board {
+    right: 3vw;
+    display: flex;
+}
+
+.items {
+    width: 20vw;
+    height: 20vw;
+    margin: 3vw;
+}
+
+#hint-board {
+    left: 3vw;
+}
+
+#close-item, #close-hint {
     position:relative;
     display: none;
     align-items: center;
@@ -144,7 +284,43 @@ img {
     border: 1px solid gold;
 }
 
-#close:hover {
+#close-item:hover, #close-hint:hover {
+    cursor: pointer;
+}
+
+#item-container {
+    display: none;
+    width: 78vw;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: transparent;
+}
+
+#hint-container {
+    display: none;
+    background-color: transparent;
+    flex-direction: column;
+    width:100%;
+    height:90%;
+}
+
+.expand {
+    display:inline-block;
+    background-color: white;
+    width: 2vw;
+    height: 2vw;
+    clip-path: polygon(20% 20%, 80% 20%, 50% 80%);
+}
+
+.hints {
+    background-color: rgb(50, 50, 100);
+    font-size: 5vw;
+    border: 1px outset gold;
+    border-radius: 1vw;
+    margin: 2vw 1vw;
+}
+
+.hints:hover {
     cursor: pointer;
 }
 
@@ -153,6 +329,16 @@ img {
     height: 100%;
     clip-path: polygon(25% 20%, 50% 45%, 75% 20%, 80% 25%, 55% 50%, 80% 75%, 75% 80%, 50% 55%, 25% 80%, 20% 75%, 45% 50%, 20% 25%);
     background: gold;
+}
+
+.hint-content {
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    background: rgb(70,70,70);
+    height: 0;
+    padding: auto;
+    font-size: 4.5vw;
+    color: transparent;
 }
 
 @keyframes fade-in {
@@ -170,9 +356,9 @@ img {
     }
 }
 
-@keyframes open-backpack {
+@keyframes opening-item {
     100%{
-        right: 10vw;
+        right: 8.3vw;
         top: 10vh;
         width: 80vw;
         height: 80vh;
@@ -180,25 +366,242 @@ img {
     }
 }
 
-@keyframes close-backpack {
+@keyframes closing-item {
     0%{
-        right: 10vw;
+        right: 8vw;
         top: 10vh;
         width: 80vw;
         height: 80vh;
         border-radius: 3vw;
     }
     100%{
-        right: 2vw;
-        top: 2vh;
+        right: 3vw;
+        top: 3vh;
         width: 0;
         height: 0;
         border-radius: 0;
     }
 }
-/*backpack--end*/
 
-/* pillars -- start */
+@keyframes opening-hint {
+    100%{
+        left: 8.3vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+}
+
+@keyframes closing-hint {
+    0%{
+        left: 8.3vw;
+        top: 10vh;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 3vw;
+    }
+    100%{
+        left: 3vw;
+        top: 3vh;
+        width: 0;
+        height: 0;
+        border-radius: 0;
+    }
+}
+
+@keyframes expanding {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 5vw;
+    }
+}
+
+@keyframes gathering {
+    0% {
+        height: 5vw;
+    }
+    100% {
+        height: 0;
+    }
+}
+/* backpack and hint -- end */
+
+
+/* wordle -- start */
+/* answer board -- start */
+#answer-board {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 80vw;
+    margin: 3vh auto;
+}
+
+.guess {
+    display: flex;
+    width: 100%;
+    height: 9vw;
+    justify-content: center;
+    margin: 2vw auto;
+}
+
+.guess-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    width: 9vw;
+    border: 1px solid #3a3a3c;
+    margin: 0 1vw;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* answer board -- end */
+
+/* keyboard -- start */
+.keyboard {
+    display: grid;
+    width: 80vw;
+    height: 30vw;
+    gap: 3vw  2vw; 
+    grid-template: repeat(3, 1fr) / repeat(20, 1fr);
+    margin: 0 auto;
+}
+
+.letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    border-radius: 1vw;
+    font-size: 2.5vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.letter:hover {
+    cursor: pointer;
+}
+
+#Q {
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+#W {
+    grid-area: 1 / 3 / span 1 / span 2;
+}
+#E {
+    grid-area: 1 / 5 / span 1 / span 2;
+}
+#R {
+    grid-area: 1 / 7 / span 1 / span 2;
+}
+#T {
+    grid-area: 1 / 9 / span 1 / span 2;
+}
+#Y {
+    grid-area: 1 / 11 / span 1 / span 2;
+}
+#U {
+    grid-area: 1 / 13 / span 1 / span 2;
+}
+#I {
+    grid-area: 1 / 15 / span 1 / span 2;
+}
+#O {
+    grid-area: 1 / 17 / span 1 / span 2;
+}
+#P {
+    grid-area: 1 / 19 / span 1 / span 2;
+}
+#A {
+    grid-area: 2 / 2 / span 1 / span 2;
+}
+#S {
+    grid-area: 2 / 4 / span 1 / span 2;
+}
+#D {
+    grid-area: 2 / 6 / span 1 / span 2;
+}
+#F {
+    grid-area: 2 / 8 / span 1 / span 2;
+}
+#G {
+    grid-area: 2 / 10 / span 1 / span 2;
+}
+#H {
+    grid-area: 2 / 12 / span 1 / span 2;
+}
+#J {
+    grid-area: 2 / 14 / span 1 / span 2;
+}
+#K {
+    grid-area: 2 / 16 / span 1 / span 2;
+}
+#L {
+    grid-area: 2 / 18 / span 1 / span 2;
+}
+#ENTER {
+    grid-area: 3 / 1 / span 1 / span 3;
+}
+#Z {
+    grid-area: 3 / 4 / span 1 / span 2;
+}
+#X {
+    grid-area: 3 / 6 / span 1 / span 2;
+}
+#C {
+    grid-area: 3 / 8 / span 1 / span 2;
+}
+#V {
+    grid-area: 3 / 10 / span 1 / span 2;
+}
+#B {
+    grid-area: 3 / 12 / span 1 / span 2;
+}
+#N {
+    grid-area: 3 / 14 / span 1 / span 2;
+}
+#M {
+    grid-area: 3 / 16 / span 1 / span 2;
+}
+#delete {
+    grid-area: 3 / 18 / span 1 / span 3;
+}
+#delete img {
+    width: 70%;
+    background-color: transparent;
+}
+
+/* keyboard -- end */
+
+@keyframes flip {
+    50% {
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes bingo{
+    40% {
+        transform: translateY(-1.8vw);
+    }
+    80% {
+        transform: translateY(0.6vw);
+    }
+}
+
+@keyframes magnify{
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* wordle -- end */
+
+/* creditor -- start */
 
 #pillars {
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
@@ -383,12 +786,7 @@ img {
     width: 46%;
 }
 
-#usury591 {
-    width: 15vw;
-    text-align: right;
-}
-
-/* pillars -- end */
+/* creditor -- end */
 
 
 
@@ -419,17 +817,6 @@ img {
     font-size: min(4vw,4vh);
 }
 
-form {
-    width: 30vw;
-    margin: 5vw auto;
-}
-
-.blockinput {
-    display: block;
-    width: 30vw;
-    margin: 1vw auto;
-}
-
 @keyframes correct {
     100% {
         background: rgb(66, 201, 25);
@@ -454,6 +841,66 @@ form {
         width: 30vw;
     }
 }
+
+#symbol{
+    width: 70%;
+}
+
+/* music -- start */
+#date-container {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 4vw;
+    width: 30vw;
+    margin: 3vh auto;
+}
+.date {
+    display: inline-block;
+    text-align: center;
+    width: 5vw;
+    height: 5vw;
+    border: 1px solid gold; 
+}
+.number-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
+    height: 20vw;
+    justify-content: space-around;
+    align-content: space-between;
+    margin: auto;
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 2vw;
+    background-color: grey;
+    font-size: 5vw;
+}
+
+#enter, #backspace {
+    width: 13vw;
+}
+
+.enterArrow {
+    display: inline-block;
+    width: 70%;
+    height: 50%;
+    clip-path: polygon(0% 80%, 10% 100%, 10% 86%, 100% 86%, 100% 30%, 94% 30%, 94% 74%, 10% 74%, 10% 60%);
+    background-color: white;
+}
+
+#backspace img {
+    width: 60%;
+    background-color: transparent;
+}
+
+/* music -- end */
 
 /*
 
