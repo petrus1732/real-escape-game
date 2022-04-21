@@ -104,8 +104,8 @@ button {
 }
 
 #cover img {
-    height: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
     filter: blur(1px) opacity(0.9);
 }
 
@@ -843,6 +843,11 @@ button {
     img {
         width: 30vw;
     }
+
+    #cover img {
+        height: 100%;
+        width: auto;
+    }
 }
 
 #symbol{
@@ -904,6 +909,16 @@ button {
 }
 
 /* music -- end */
+
+
+
+/* end page*/
+#end {
+    margin-top: 20vh;
+    width: 80vw;
+}
+
+
 
 /*
 

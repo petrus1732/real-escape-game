@@ -150,7 +150,7 @@ const nextInstruction = () => {
 /*story -- start */
 
 let page = 1;
-let last = [8, 15, 9, 10, 13, 5];
+let last = [8, 15, 9, 10, 13, 5, 21];
 
 
 const visualize = () => {
@@ -171,6 +171,8 @@ const nxt = (n) => {
             window.location = "./sand.html";
         }else if (n === 5) {
             window.location = "./library.html";
+        }else if (n === 6) {
+            window.location = './end.html';
         }
     }else {
         document.getElementById("p" + (page-1) ).style.display = 'none';

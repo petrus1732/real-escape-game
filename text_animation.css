@@ -8,6 +8,18 @@
   color: gold;
 }
 
+.red span {
+  color: rgb(170, 3, 3)
+}
+
+.blood span {
+  color: red;
+}
+
+.blue span {
+  color: rgba(27, 27, 199, 0.874)
+}
+
 /* English span -- start*/
 
 #gone {
