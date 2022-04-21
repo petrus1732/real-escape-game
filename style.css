@@ -104,6 +104,7 @@ button {
 }
 
 #cover img {
+    height: 100%;
     filter:opacity(0.9);
 }
 
