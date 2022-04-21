@@ -13,7 +13,7 @@
 header {
     text-align: center;
     font-size: 5vw;
-    margin: 2vh auto;
+    margin: 2vh auto 4vh;
 }
 
 p {
@@ -105,7 +105,8 @@ button {
 
 #cover img {
     height: 100%;
-    filter:opacity(0.9);
+    width: auto;
+    filter: blur(1px) opacity(0.9);
 }
 
 #cover-arrow {
@@ -295,6 +296,7 @@ button {
     flex-wrap: wrap;
     align-content: flex-start;
     background-color: transparent;
+    margin-top: 3vw;
 }
 
 #hint-container {

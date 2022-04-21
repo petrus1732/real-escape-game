@@ -11,20 +11,20 @@
 /* English span -- start*/
 
 #gone {
-  width: 15vw;
+  width: 18vw;
 }
 
 #reminiscence {
-  width: 30vw;
+  width: 36vw;
 }
 
 #gmail-text {
-  width: 25vw;
+  width: 30vw;
 }
 
 #gmail {
-  width: 45vw;
-  font-size: 4.5vw;
+  width: 54vw;
+  font-size: 4.8vw;
 }
 
 /* English span -- end*/
@@ -37,12 +37,16 @@ a {
   display: none;
 }
 
+#book-name {
+  display: none;
+}
+
 .container{
   display: none;
   flex-direction: column;
   margin: 20vh auto 1vh;
   height: 60vh;
-  width: 60vw;
+  width: 72vw;
   overflow: hidden;
   position: relative;
 }
@@ -58,13 +62,13 @@ a {
   text-align: center;
   position: relative;
   padding: 0;
-  width: 60vw;
-  font-size: 5vw;
+  width: 72vw;
+  font-size: 6vw;
 }
 
 span {
   display: inline-block;
-  width: 5vw;
+  width: 6vw;
 }
 
 .dynamic-text::before{

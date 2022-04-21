@@ -150,7 +150,7 @@ const nextInstruction = () => {
 /*story -- start */
 
 let page = 1;
-let last = [8, 15, 9, 10, 12, 5];
+let last = [8, 15, 9, 10, 13, 5];
 
 
 const visualize = () => {
@@ -219,6 +219,9 @@ const nxt = (n) => {
                 document.getElementById('p10').style.marginTop = '10vh'; 
                 document.getElementById('p10').style.height = '70vh'; 
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+            }else if (page === 5) {
+                document.getElementById('p12').style.marginTop = '10vh';
+                document.getElementById('p10').style.height = '70vh';
             }
         }else if (n === 5){
             if (page === 3) {
@@ -226,12 +229,12 @@ const nxt = (n) => {
                 document.getElementById('p3').style.height = '70vh';               
                 backpackAdd('./image/diary0103.png', '日記 1/3', 'long-img');
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }
-            if (page === 4) {
+            }else if (page === 4) {
                 document.getElementById('go-to-library').style.display = 'none';
+                document.getElementById('book-name').style.display = 'block';
                 document.getElementById('p4').style.marginTop = '10vh'; 
                 document.getElementById('p4').style.height = '70vh';               
-                backpackAdd('./image/diary1225.png', '日記 12/25', 'long-img');
+                backpackAdd('./image/diary1225.png', '日記 12/25', 'wide-img');
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
             }
         }

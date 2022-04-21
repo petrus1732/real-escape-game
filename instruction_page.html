@@ -26,7 +26,7 @@
                     <div class="hints" onclick="clickHint(this,1)">
                         提示2
                         <div class="expand" id="expand2"></div>
-                        <div class="hint-content" id="hint-content2">答案與背包裡的物件名稱出現的聲調相同</div>
+                        <div class="hint-content" id="hint-content2">答案只有兩種聲調</div>
                     </div>
                     <div class="hints" onclick="clickHint(this,2)">
                         提示3
@@ -50,8 +50,8 @@
                 <p class="instruction" id="I4">關卡左上角有提示與解答</p>
                 <p class="instruction" id="I5">自行探索頁面已取得答案吧！</p>
                 <p id="I6">(點擊螢幕繼續)</p>
+                <input class="block-input" id="進入遊戲" onchange="check_valid(this,'first_text')">
             </div>
-            <input class="block-input" id="進入遊戲" onchange="check_valid(this,'first_text')">
             <button onclick="nextpage('first_text')" class="nextpage" id="go-to-first_text"><div class="arrow"></div></button>
         </main>
     </body>
