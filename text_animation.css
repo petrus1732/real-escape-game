@@ -24,6 +24,7 @@
 
 #gmail {
   width: 45vw;
+  font-size: 4.5vw;
 }
 
 /* English span -- end*/
@@ -40,7 +41,7 @@ a {
   display: none;
   flex-direction: column;
   margin: 20vh auto 1vh;
-  height: 70vh;
+  height: 60vh;
   width: 60vw;
   overflow: hidden;
   position: relative;

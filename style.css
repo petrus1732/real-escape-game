@@ -123,7 +123,7 @@ button {
 }
 
 .instruction {
-    font-size: 5vh;
+    font-size: 8vw;
     opacity: 0;
 }
 
@@ -314,7 +314,7 @@ button {
 
 .hints {
     background-color: rgb(50, 50, 100);
-    font-size: 3vw;
+    font-size: 5vw;
     border: 1px outset gold;
     border-radius: 1vw;
     margin: 2vw 1vw;
@@ -337,7 +337,7 @@ button {
     background: rgb(70,70,70);
     height: 0;
     padding: auto;
-    font-size: 2.5vw;
+    font-size: 4.5vw;
     color: transparent;
 }
 

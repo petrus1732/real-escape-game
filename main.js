@@ -197,7 +197,7 @@ const nxt = (n) => {
             }else if (page === 6) {
                 backpackAdd('./image/diary1224.jpg', '日記 12/24', 'long-img');
                 document.getElementById('p6').style.marginTop = '10vh'; 
-                document.getElementById('p6').style.height = '80vh'; 
+                document.getElementById('p6').style.height = '70vh'; 
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
             }
         }
@@ -205,32 +205,32 @@ const nxt = (n) => {
             if (page === 2) {
                 backpackAdd('./image/diary0412.jpg', '日記 4/12', 'long-img');
                 document.getElementById('p2').style.marginTop = '10vh'; 
-                document.getElementById('p2').style.height = '80vh'; 
+                document.getElementById('p2').style.height = '70vh'; 
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
             }else if (page === 4) {
                 backpackAdd('./image/diagnosis.jpg', '診療單', 'long-img');
                 document.getElementById('p4').style.marginTop = '10vh'; 
-                document.getElementById('p4').style.height = '80vh'; 
+                document.getElementById('p4').style.height = '70vh'; 
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
             }
         }else if (n === 4) {
             if (page === 10) {
                 backpackAdd('./image/diary0207.jpg', '日記 2/7', 'long-img');
                 document.getElementById('p10').style.marginTop = '10vh'; 
-                document.getElementById('p10').style.height = '80vh'; 
+                document.getElementById('p10').style.height = '70vh'; 
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
             }
         }else if (n === 5){
             if (page === 3) {
                 document.getElementById('p3').style.marginTop = '10vh'; 
-                document.getElementById('p3').style.height = '80vh';               
+                document.getElementById('p3').style.height = '70vh';               
                 backpackAdd('./image/diary0103.png', '日記 1/3', 'long-img');
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
             }
             if (page === 4) {
                 document.getElementById('go-to-library').style.display = 'none';
                 document.getElementById('p4').style.marginTop = '10vh'; 
-                document.getElementById('p4').style.height = '80vh';               
+                document.getElementById('p4').style.height = '70vh';               
                 backpackAdd('./image/diary1225.png', '日記 12/25', 'long-img');
                 document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
             }
@@ -254,7 +254,7 @@ const check_valid2 = (e) => {
         e.setAttribute("readOnly",true);
         state["pass_"+e.id] = true;
         if (state["pass_demon"] && state["pass_balcony"]) {
-            setTimeout(()=>document.getElementById("go-to-someplace").style.display = "block",1000);
+            setTimeout(()=>document.getElementById("go-to-somePlace").style.display = "block",1000);
         }
     }
     else {
