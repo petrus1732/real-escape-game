@@ -98,6 +98,7 @@ button {
 
 #cover {
     position: fixed;
+    padding-top: 0;
     width: 100vw;
     height: 100vh;
 }
@@ -118,12 +119,11 @@ button {
 /* instruction page -- start */
 
 #instruction-container {
-    margin-top: 10vh;
-    height: 60vh;
+    margin-top: 15vw;
 }
 
 .instruction {
-    font-size: 8vw;
+    font-size: 6vw;
     opacity: 0;
 }
 
@@ -293,7 +293,7 @@ button {
     width: 78vw;
     flex-wrap: wrap;
     align-content: flex-start;
-    overflow: scroll;
+    background-color: transparent;
 }
 
 #hint-container {
