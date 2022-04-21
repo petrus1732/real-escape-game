@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>塵封記憶</title>
+        <link href='./style.css' rel='stylesheet'>
+        <link href='./text_animation.css' rel='stylesheet'>
+    </head>
+    <body onload="prepareItems(7)">
+        <header>
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"><div id="fade2"></div></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
+        </header>
+        <main>
+            <div class="container" id="p1">
+                <div class="first dynamic-text">
+                   <span>「</span><span id="reminiscence">reminiscence…</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>我</span>
+                    <span>沒</span>
+                    <span>有</span>
+                    <span>記</span>
+                    <span>錯</span>
+                    <span>，</span>
+                    <span>過</span>
+                    <span>去</span>
+                    <span>真</span>
+                    <span>的</span>
+                    <span>有</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>一</span>
+                    <span>段</span>
+                    <span>歡</span>
+                    <span>樂</span>
+                    <span>的</span>
+                    <span>時</span>
+                    <span>光</span>
+                    <span>…</span>
+                    <span>！</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p2">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>但</span>
+                    <span>是</span>
+                    <span>…</span>
+                    <span>為</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>？</span>
+                    <span></span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>中</span>
+                    <span>間</span>
+                    <span>發</span>
+                    <span>生</span>
+                    <span>了</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>事</span>
+                    <span>情</span>
+                    <span>？</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>短</span>
+                    <span>短</span>
+                    <span>的</span>
+                    <span>幾</span>
+                    <span>個</span>
+                    <span>月</span>
+                    <span>內</span>
+                    <span>怎</span>
+                    <span>麼</span>
+                    <span>就</span>
+                    <span>變</span>
+                </div>
+                <div class="fourth dynamic-text">
+                    <span></span>
+                    <span>調</span>
+                    <span>了</span>
+                    <span>…</span>
+                    <span>？</span>
+                    <span>」</span>    
+                </div>
+            </div>
+            <div class="container" id="p3">
+                <figure class="whole-page">
+                    <img src="./image/diary0103.png" class="long-img">
+                </figure>
+            </div>
+            <div class="container" id="p4">
+                <figure class="whole-page">
+                    <img src="./image/diary1225.png" class="long-img">
+                </figure>
+                <p>台大文人庫 書名<input id="不願面對的真相" onchange="check_valid(this, 'library')"> 第172頁</p>
+            </div>
+            <button onclick="nxt(5)" class="nextpage-show" id="go-to-library"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>

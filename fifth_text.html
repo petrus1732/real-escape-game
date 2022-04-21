@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>塵封記憶</title>
+        <link href='./style.css' rel='stylesheet'>
+        <link href='./text_animation.css' rel='stylesheet'>
+    </head>
+    <body onload="prepareItems(6)">
+        <header>
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"><div id="fade2"></div></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
+        </header>
+        <main>
+            <div class="container" id="p1">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>所</span>
+                    <span>以</span>
+                    <span>診</span>
+                    <span>療</span>
+                    <span>單</span>
+                    <span>上</span>
+                    <span>面</span>
+                    <span>寫</span>
+                    <span>的</span>
+                    <span>…</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>為</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>…</span>
+                    <span>為</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p2">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>…</span>
+                    <span>家</span>
+                    <span>暴</span>
+                    <span>…</span>
+                    <span>？</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>我</span>
+                    <span>不</span>
+                    <span>能</span>
+                    <span>相</span>
+                    <span>信</span>
+                    <span>，</span>
+                    <span>爸</span>
+                    <span>爸</span>
+                    <span>明</span>
+                    <span>明</span>
+                    <span>是</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>一</span>
+                    <span>個</span>
+                    <span>很</span>
+                    <span>溫</span>
+                    <span>柔</span>
+                    <span>的</span>
+                    <span>人</span>
+                    <span>啊</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p3">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>到</span>
+                    <span>底</span>
+                    <span>發</span>
+                    <span>生</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>事</span>
+                    <span>情</span>
+                    <span>了</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p4">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>難</span>
+                    <span>道</span>
+                    <span>說</span>
+                    <span>…</span>
+                    <span>爸</span>
+                    <span>爸</span>
+                    <span>曾</span>
+                    <span>經</span>
+                    <span>做</span>
+                    <span>過</span>
+                    <span>什</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>麼</span>
+                    <span>事</span>
+                    <span>嗎</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p5">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>不</span>
+                    <span>可</span>
+                    <span>能</span>
+                    <span>…</span>
+                    <span>在</span>
+                    <span>我</span>
+                    <span>的</span>
+                    <span>記</span>
+                    <span>憶</span>
+                    <span>中</span>
+                    <span>爸</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>爸</span>
+                    <span>都</span>
+                    <span>非</span>
+                    <span>常</span>
+                    <span>地</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p6">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>等</span>
+                    <span>等</span>
+                    <span>…</span>
+                    <span>我</span>
+                    <span>怎</span>
+                    <span>麼</span>
+                    <span>了</span>
+                    <span>…</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>為</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>我</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>都</span>
+                    <span>想</span>
+                    <span>不</span>
+                    <span>起</span>
+                    <span>來</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>了</span>
+                    <span>？</span>
+                    <span>」</span>        
+                </div>
+            </div>
+            <div class="container" id="p7">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>這</span>
+                    <span>種</span>
+                    <span>感</span>
+                    <span>覺</span>
+                    <span>…</span>
+                </div>                 
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>吸</span>
+                    <span>不</span>
+                    <span>過</span>
+                    <span>氣</span>
+                    <span>，</span>
+                    <span>好</span>
+                    <span>痛</span>
+                    <span>苦</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p8">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>爸</span>
+                    <span>爸</span>
+                    <span>到</span>
+                    <span>底</span>
+                    <span>長</span>
+                    <span>怎</span>
+                    <span>樣</span>
+                    <span>…</span>
+                    <span>我</span>
+                    <span>怎</span>
+                    <span>麼</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>一</span>
+                    <span>點</span>
+                    <span>兒</span>
+                    <span>也</span>
+                    <span>想</span>
+                    <span>不</span>
+                    <span>起</span>
+                    <span>來</span>
+                    <span>…</span>
+                    <span>」</span>  
+                </div>
+            </div>
+            <div class="container" id="p9">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>記</span>
+                    <span>憶</span>
+                    <span>…</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>我</span>
+                    <span>需</span>
+                    <span>要</span>
+                    <span>更</span>
+                    <span>多</span>
+                    <span>記</span>
+                    <span>憶</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p10">
+                <figure class="whole-page">
+                    <img src="./image/diary0207.jpg" class="long-img">
+                </figure>
+            </div>
+            <div class="container" id="p11">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>密</span>
+                    <span>碼</span>
+                    <span>…</span>
+                    <span>？</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>我</span>
+                    <span>小</span>
+                    <span>時</span>
+                    <span>候</span>
+                    <span>做</span>
+                    <span>的</span>
+                    <span>密</span>
+                    <span>碼</span>
+                    <span>？</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>我</span>
+                    <span>怎</span>
+                    <span>麼</span>
+                    <span>不</span>
+                    <span>記</span>
+                    <span>得</span>
+                    <span>了</span>
+                    <span>？</span>
+                </div>
+                <div class="fourth dynamic-text">
+                    <span></span>
+                    <span>這</span>
+                    <span>是</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>意</span>
+                    <span>思</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <button onclick="nxt(4)" class="nextpage-show"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>

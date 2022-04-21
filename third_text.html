@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>塵封記憶</title>
+        <link href='./style.css' rel='stylesheet'>
+        <link href='./text_animation.css' rel='stylesheet'>
+    </head>
+    <body onload="prepareItems(3)">
+        <header>
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"><div id="fade2"></div></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
+        </header>
+        <main>
+            <div class="container" id="p1">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span id="gmail-text">usury591…</span>
+                    <span>高</span>
+                    <span>利</span>
+                    <span>貸</span>
+                    <span>…</span>
+                    <span>？</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>感</span>
+                    <span>覺</span>
+                    <span>像</span>
+                    <span>是</span>
+                    <span>一</span>
+                    <span>個</span>
+                    <span>電</span>
+                    <span>子</span>
+                    <span>郵</span>
+                    <span>件</span>
+                    <span>信</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>箱</span>
+                    <span>帳</span>
+                    <span>號</span>
+                    <span>…</span>
+                    <span>說</span>
+                    <span>不</span>
+                    <span>定</span>
+                    <span>寄</span>
+                    <span>信</span>
+                    <span>就</span>
+                    <span>可</span>
+                </div>
+                <div class="fourth dynamic-text">
+                    <span></span>
+                    <span>以</span>
+                    <span>找</span>
+                    <span>到</span>
+                    <span>人</span>
+                    <span>了</span>
+                    <span>嗎</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p2">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>信</span>
+                    <span>件</span>
+                    <span>標</span>
+                    <span>題</span>
+                    <span>要</span>
+                    <span>寫</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>呢</span>
+                    <span>？</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>就</span>
+                    <span>寫</span>
+                    <span>《</span>
+                    <span>威</span>
+                    <span>脅</span>
+                    <span>潘</span>
+                    <span>誠</span>
+                    <span>元</span>
+                    <span>一</span>
+                    <span>事</span>
+                    <span>》</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>好</span>
+                    <span>了</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+                <div class="fourth dynamic-text gold">
+                    <span></span>
+                    <span>寄</span>
+                    <span>信</span>
+                    <span>至</span>
+                    <span id="gmail" ><a href="mailto:usury591@gmail.com">usury591@gmail.com</a></span>
+                </div>
+            </div>
+            <div class="container" id="p3">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>看</span>
+                    <span>來</span>
+                    <span>好</span>
+                    <span>像</span>
+                    <span>不</span>
+                    <span>是</span>
+                    <span>因</span>
+                    <span>為</span>
+                    <span>借</span>
+                    <span>錢</span>
+                    <span>才</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>消</span>
+                    <span>失</span>
+                    <span>的</span>
+                    <span>…</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>畢</span>
+                    <span>竟</span>
+                    <span>錢</span>
+                    <span>都</span>
+                    <span>有</span>
+                    <span>還</span>
+                    <span>回</span>
+                    <span>去</span>
+                    <span>了</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div> 
+            <div class="container" id="p4">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>等</span>
+                    <span>等</span>
+                    <span>，</span>
+                    <span>某</span>
+                    <span>一</span>
+                    <span>天</span>
+                    <span>？</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>父</span>
+                    <span>親</span>
+                    <span>是</span>
+                    <span>哪</span>
+                    <span>一</span>
+                    <span>天</span>
+                    <span>消</span>
+                    <span>失</span>
+                    <span>的</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p5">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>媽</span>
+                    <span>媽</span>
+                    <span>的</span>
+                    <span>日</span>
+                    <span>記</span>
+                    <span>會</span>
+                    <span>不</span>
+                    <span>會</span>
+                    <span>還</span>
+                    <span>有</span>
+                    <span>著</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>線</span>
+                    <span>索</span>
+                    <span>？</span>
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>我</span>
+                    <span>是</span>
+                    <span>不</span>
+                    <span>是</span>
+                    <span>還</span>
+                    <span>漏</span>
+                    <span>掉</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p6">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>應</span>
+                    <span>該</span>
+                    <span>就</span>
+                    <span>是</span>
+                    <span>這</span>
+                    <span>一</span>
+                    <span>篇</span>
+                    <span>了</span>
+                    <span>…</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>唉</span>
+                    <span>…</span>
+                    <span>偏</span>
+                    <span>偏</span>
+                    <span>日</span>
+                    <span>期</span>
+                    <span>糊</span>
+                    <span>掉</span>
+                    <span>了</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+                <figure class="whole-page">
+                    <img src="./image/diary1224.jpg" class="long-img">
+                </figure>
+            </div>
+            <div class="container" id="p7">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>演</span>
+                    <span>奏</span>
+                    <span>…</span>
+                    <span>？</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>或</span>
+                    <span>許</span>
+                    <span>能</span>
+                    <span>推</span>
+                    <span>出</span>
+                    <span>一</span>
+                    <span>些</span>
+                    <span>端</span>
+                    <span>倪</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p8">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>去</span>
+                    <span>鹿</span>
+                    <span>鳴</span>
+                    <span>廣</span>
+                    <span>場</span>
+                    <span>看</span>
+                    <span>看</span>
+                    <span>吧</span>
+                    <span>！</span>
+                    <span>」</span>
+                </div>
+                <div class="second dynamic-text gold">
+                    <span></span>
+                    <span>（</span>
+                    <span>請</span>
+                    <span>前</span>
+                    <span>往</span>
+                    <span>下</span>
+                    <span>一</span>
+                    <span>個</span>
+                    <span>地</span>
+                    <span>點</span>
+                    <span>）</span>
+                </div>
+            </div>
+             <input class="block-input" id="與我無關" onchange="check_valid(this, 'post-gmail')">
+            <button onclick="nxt(2)" class="nextpage-show" id="go-to-post-gmail"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>

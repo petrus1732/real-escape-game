@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>塵封記憶</title>
+        <link href='./style.css' rel='stylesheet'>
+        <link href='./text_animation.css' rel='stylesheet'>
+    </head>
+    <body onload="prepareItems(4)">
+        <header>
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"><div id="fade2"></div></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
+        </header>
+        <main>
+            <div class="container" id="p1">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>平</span>
+                    <span>安</span>
+                    <span>夜</span>
+                    <span>…</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>爸</span>
+                    <span>爸</span>
+                    <span>好</span>
+                    <span>像</span>
+                    <span>就</span>
+                    <span>是</span>
+                    <span>在</span>
+                    <span>平</span>
+                    <span>安</span>
+                    <span>夜</span>
+                    <span>消</span>
+                </div>
+                <div class="third dynamic-text"> 
+                    <span></span>
+                    <span>失</span>
+                    <span>的</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p2">
+                <figue class="whole-page">
+                    <img src="./image/diary0412.jpg" class="long-img">
+                </figue>
+            </div>
+            <div class="container" id="p3">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>對</span>
+                    <span>了</span>
+                    <span>，</span>
+                    <span>媽</span>
+                    <span>媽</span>
+                    <span>常</span>
+                    <span>常</span>
+                    <span>去</span>
+                    <span>同</span>
+                    <span>個</span>
+                    <span>地</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>方</span>
+                    <span>看</span>
+                    <span>病</span>
+                    <span>，</span>
+                    <span>他</span>
+                    <span>好</span>
+                    <span>像</span>
+                    <span>有</span>
+                    <span>個</span>
+                    <span>朋</span>
+                    <span>友</span>    
+                </div>
+                <div class="third dynamic-text">
+                    <span></span>
+                    <span>是</span>
+                    <span>心</span>
+                    <span>理</span>
+                    <span>醫</span>
+                    <span>生</span>
+                    <span>…</span>
+                    <span>」</span>                
+                </div>
+            </div>
+            <div class="container" id="p4">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>這</span>
+                    <span>裡</span>
+                    <span>有</span>
+                    <span>媽</span>
+                    <span>媽</span>
+                    <span>的</span>
+                    <span>診</span>
+                    <span>療</span>
+                    <span>單</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+                <figure class="whole-page">
+                    <img src="./image/diagnosis.jpg" class="long-img">
+                </figure>
+            </div>
+            <div class="container" id="p5">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>但</span>
+                    <span>是</span>
+                    <span>奇</span>
+                    <span>怪</span>
+                    <span>，</span>
+                    <span>是</span>
+                    <span>什</span>
+                    <span>麼</span>
+                    <span>原</span>
+                    <span>因</span>
+                    <span>讓</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>媽</span>
+                    <span>媽</span>
+                    <span>這</span>
+                    <span>麼</span>
+                    <span>痛</span>
+                    <span>苦</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p6">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>去</span>
+                    <span>找</span>
+                    <span>醫</span>
+                    <span>生</span>
+                    <span>吧</span>
+                    <span>！</span>
+                    <span>」</span>
+                </div>
+                <div class="second dynamic-text gold">
+                    <span></span>
+                    <span>（</span>
+                    <span>請</span>
+                    <span>前</span>
+                    <span>往</span>
+                    <span>下</span>
+                    <span>一</span>
+                    <span>個</span>
+                    <span>地</span>
+                    <span>點</span>
+                    <span>）</span>
+                </div>
+            </div>
+            <div class="container" id="p7">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>媽</span>
+                    <span>媽</span>
+                    <span>常</span>
+                    <span>常</span>
+                    <span>跟</span>
+                    <span>醫</span>
+                    <span>生</span>
+                    <span>約</span>
+                    <span>在</span>
+                    <span>這</span>
+                    <span>裡</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>，</span>
+                    <span>但</span>
+                    <span>今</span>
+                    <span>天</span>
+                    <span>他</span>
+                    <span>沒</span>
+                    <span>有</span>
+                    <span>來</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p8">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>咦</span>
+                    <span>？</span>
+                    <span>這</span>
+                    <span>裡</span>
+                    <span>有</span>
+                    <span>一</span>
+                    <span>份</span>
+                    <span>奇</span>
+                    <span>怪</span>
+                    <span>的</span>
+                    <span>文</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>件</span>
+                    <span>，</span>
+                    <span>好</span>
+                    <span>像</span>
+                    <span>是</span>
+                    <span>醫</span>
+                    <span>生</span>
+                    <span>掉</span>
+                    <span>的</span>
+                    <span>…</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <div class="container" id="p9">
+                <div class="first dynamic-text">
+                    <span>「</span>
+                    <span>等</span>
+                    <span>等</span>
+                    <span>，</span>
+                    <span>上</span>
+                    <span>面</span>
+                    <span>…</span>
+                    <span>好</span>
+                    <span>像</span>
+                    <span>有</span>
+                    <span>點</span>
+                    <span>蛛</span>
+                </div>
+                <div class="second dynamic-text">
+                    <span></span>
+                    <span>絲</span>
+                    <span>馬</span>
+                    <span>跡</span>
+                    <span>…</span>
+                    <span>？</span>
+                    <span>」</span>
+                </div>
+            </div>
+            <button onclick="nxt(3)" class="nextpage-show"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>

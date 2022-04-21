@@ -6,7 +6,7 @@
         <title>塵封記憶</title>
         <link href='./style.css' rel='stylesheet'>
     </head>
-    <body onload="prepareItems(7)">
+    <body onload="prepareItems(4)">
         <header>
             沙坑
             <div id="fade"></div>
@@ -43,9 +43,30 @@
             <figure id="hint" onclick="opens('hint')"><img src="./image/hint.png" class="icon"></figure>
         </header>
         <main>
-            <figure><img src="./image/sand.jpg" id="symbol"></figure>          
-            <input class="block-input" id="reminiscence" onchange="check_valid(this, 'sixth_text')">
-            <button onclick="nextpage('sixth_text')" class="nextpage" id="go-to-sixth_text"><div class="arrow"></div></button>
+            <figure><img src="./image/music.jpg" id="symbol"></figure>          
+            <div id="date-container">
+                <span class="date" id="date1"></span>
+                <span class="date" id="date2"></span>
+                月
+                <span class="date" id="date3"></span>
+                <span class="date" id="date4"></span>
+                日
+            </div>
+            <div class="number-container">
+                <div class="number" id="n0" onclick="enterNumber('0')">0</div>
+                <div class="number" id="n1" onclick="enterNumber('1')">1</div>
+                <div class="number" id="n2" onclick="enterNumber('2')">2</div>
+                <div class="number" id="n3" onclick="enterNumber('3')">3</div>
+                <div class="number" id="n4" onclick="enterNumber('4')">4</div>
+                <div class="number" id="backspace" onclick="backspace()"><img src="./image/delete.png"></div>
+                <div class="number" id="n5" onclick="enterNumber('5')">5</div>
+                <div class="number" id="n6" onclick="enterNumber('6')">6</div>
+                <div class="number" id="n7" onclick="enterNumber('7')">7</div>
+                <div class="number" id="n8" onclick="enterNumber('8')">8</div>
+                <div class="number" id="n9" onclick="enterNumber('9')">9</div>
+                <div class="number" id="enter" onclick="checkDate()"><div class="enterArrow"></div></div>
+            </div>
+            <button onclick="nextpage('fourth_text')" class="nextpage" id="go-to-fourth_text"><div class="arrow"></div></button>
         </main>
     </body>
     <script src="main.js"></script>

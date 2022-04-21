@@ -1,39 +1,66 @@
 * {
-  box-sizing: border-box;
   --spc: 0.1s; /*second per letter*/
   --cpl: 12; /*character per line*/ 
 }
 
 
-body{
-  text-align: center;
-  background: black;
-  font-family: 標楷體, sans-serif;
-  color: white;
-  height: 90vh;
+.gold span {
+  color: gold;
+}
+
+/* English span -- start*/
+
+#gone {
+  width: 15vw;
+}
+
+#reminiscence {
+  width: 30vw;
+}
+
+#gmail-text {
+  width: 25vw;
+}
+
+#gmail {
+  width: 45vw;
+}
+
+/* English span -- end*/
+
+a {
+  color: cyan;
+}
+
+#與我無關 {
+  display: none;
 }
 
 .container{
   display: none;
   flex-direction: column;
-  margin: 20vh auto 5vh;
-  height: 40vw;
+  margin: 20vh auto 1vh;
+  height: 70vh;
   width: 60vw;
   overflow: hidden;
   position: relative;
+}
+
+#p1 {
+  display: flex;
 }
 
 
 .dynamic-text{
   display: flex;
   background: black;
-  text-align: justify;
+  text-align: center;
   position: relative;
   padding: 0;
   width: 60vw;
   font-size: 5vw;
-  white-space: nowrap;
 }
+
 span {
   display: inline-block;
   width: 5vw;
@@ -73,39 +100,3 @@ span {
     left: 100%;
   }
 }
-
-button {
-  background: black;
-  width: 12vw;
-  height: 12vw;
-  border-radius: 50%;
-  border: 1px solid gold;
-  animation: blink 1.5s infinite;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-@keyframes blink {
-  0%{
-    opacity: 0.5;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0.5;
-  }
-}
-
-#arrow {
-  background: gold;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(40% 30%, 48% 30%, 74% 50%, 48% 70%, 40% 70%, 66% 50%)
-}
-
-
-
-

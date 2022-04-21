@@ -1,3 +1,90 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" utf-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>塵封記憶</title>
+        <link href='./style.css' rel='stylesheet'>
+    </head>
+
+    <body onload="prepareItems(3)">
+        <header>
+            債主地盤
+            <div id="fade"></div>
+            <div id="item-board">
+                <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
+                <div id="item-container"><div id="fade2"></div></div>
+            </div>
+            <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
+            <div id="hint-board">
+                <button id="close-hint" onclick="closes('hint', 4)"><div class="cross"></div></button>
+                <div id="hint-container">
+                    <div class="hints" onclick="clickHint(this,0)">
+                        提示1
+                        <div class="expand" id="expand1"></div>
+                        <div class="hint-content" id="hint-content1">方格內的數字與高度有關</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,1)">
+                        提示2
+                        <div class="expand" id="expand2"></div>
+                        <div class="hint-content" id="hint-content2">一橫排磚塊代表著一個二進位數字</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,2)">
+                        提示3
+                        <div class="expand" id="expand3"></div>
+                        <div class="hint-content" id="hint-content3">方格背後的圖樣代表解出來為英文或數字</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,3)">
+                        答案
+                        <div class="expand" id="expand4"></div>
+                        <div class="hint-content" id="hint-content3">usury591</div>
+                    </div>
+                </div>
+            </div>
+            <figure id="hint" onclick="opens('hint')"><img src="./image/hint.png" class="icon"></figure>
+        </header>
+        <main>
+            <figure>
+                <img src="./image/binary.png">
+            </figure>
+            <div class="grid" id="pillars">
+                <div class="pillar" id="pillar1">34<img src="./image/letter.png" class="content" id="content1"></div>
+                <div class="direction" id="direction1"><img src="./image/rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar2">9<img src="./image/letter.png" class="content" id="content2"></div>
+                <div class="direction" id="direction2"><img src="./image/rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar3">34<img src="./image/letter.png" class="content" id="content3"></div>
+                <div class="direction" id="direction3"><img src="./image/downleftarrow.png" class="arrows"></div>
+                <div class="direction" id="direction4"><img src="./image/leftdownarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar4">26<img src="./image/letter.png" class="content" id="content4"></div>
+                <div class="direction" id="direction5"><img src="./image/rightarrow.png" class="arrows"></div>
+                <div class="direction" id="direction6"><img src="./image/rightarrow.png" class="arrows"></div>
+                <div id="middle">
+                    <span class="hint-text" id="lefttop">u</span>
+                    <span class="hint-text" id="centertop">●</span>
+                    <span class="hint-text" id="righttop">●</span>
+                    <span class="hint-text" id="leftcenter">●</span>
+                    <span class="hint-text" id="rightcenter">●</span>
+                    <span class="hint-text" id="leftbottom">5</span>
+                    <span class="hint-text" id="centerbottom">■</span>
+                    <span class="hint-text" id="rightbottom">■</span>
+                    <img src="./image/installaton_art.png" class="content" id="art">
+                </div>
+                <div class="pillar" id="pillar5">53<img src="./image/letter.png" class="content" id="content5"></div>
+                <div class="direction" id="direction7"><img src="./image/downleftarrow.png" class="arrows"></div>
+                <div class="direction" id="direction8"><img src="./image/leftdownarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar6">15<img src="./image/number.png" class="content" id="content6"></div>
+                <div class="direction" id="direction9"><img src="./image/rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar7">23<img src="./image/number.png" class="content" id="content7"></div>
+                <div class="direction" id="direction10"><img src="./image/rightarrow.png" class="arrows"></div>
+                <div class="pillar" id="pillar8">2<img src="./image/number.png" class="content" id="content8"></div>
+            </div>
+            <input class="block-input" id="usury591" onchange="check_valid(this,'third_text')">
+            <button onclick="nextpage('third_text')" class="nextpage" id="go-to-third_text"><div class="arrow"></div></button>
+        </main>
+    </body>
+    <script src="main.js"></script>
+=======
 <!DOCTYPE html>
 <html>
     <head>
@@ -83,4 +170,5 @@
         </main>
     </body>
     <script src="main.js"></script>
+>>>>>>> 11ebd981608e4ba671a9d5f9163ce33239a13acb
 </html>

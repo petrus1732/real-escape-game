@@ -6,9 +6,9 @@
         <title>塵封記憶</title>
         <link href='./style.css' rel='stylesheet'>
     </head>
-    <body onload="prepareItems(7)">
+    <body>
         <header>
-            沙坑
+            遊玩須知
             <div id="fade"></div>
             <div id="item-board">
                 <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
@@ -21,31 +21,38 @@
                     <div class="hints" onclick="clickHint(this,0)">
                         提示1
                         <div class="expand" id="expand1"></div>
-                        <div class="hint-content" id="hint-content1">符號與柱子對應</div>
+                        <div class="hint-content" id="hint-content1">答案是四個中文字</div>
                     </div>
                     <div class="hints" onclick="clickHint(this,1)">
                         提示2
                         <div class="expand" id="expand2"></div>
-                        <div class="hint-content" id="hint-content2">一個圈代表一個英文字</div>
+                        <div class="hint-content" id="hint-content2">答案與背包裡的物件名稱出現的聲調相同</div>
                     </div>
                     <div class="hints" onclick="clickHint(this,2)">
                         提示3
                         <div class="expand" id="expand3"></div>
-                        <div class="hint-content" id="hint-content3">文字順序與彩虹顏色相關</div>
+                        <div class="hint-content" id="hint-content3">聲調是4424</div>
                     </div>
                     <div class="hints" onclick="clickHint(this,3)">
                         答案
                         <div class="expand" id="expand4"></div>
-                        <div class="hint-content" id="hint-content3">reminiscence</div>
+                        <div class="hint-content" id="hint-content3">進入遊戲</div>
                     </div>
                 </div>
             </div>
             <figure id="hint" onclick="opens('hint')"><img src="./image/hint.png" class="icon"></figure>
         </header>
-        <main>
-            <figure><img src="./image/sand.jpg" id="symbol"></figure>          
-            <input class="block-input" id="reminiscence" onchange="check_valid(this, 'sixth_text')">
-            <button onclick="nextpage('sixth_text')" class="nextpage" id="go-to-sixth_text"><div class="arrow"></div></button>
+        <main onclick="nextInstruction()">
+            <div id="instruction-container">
+                <p class="instruction" id="I1">請不要重整頁面或回上頁</p>
+                <p class="instruction" id="I2">遇到重要物件時會新增至背包</p>
+                <p class="instruction" id="I3">背包閃爍便代表新增物品</p>
+                <p class="instruction" id="I4">關卡左上角有提示與解答</p>
+                <p class="instruction" id="I5">自行探索頁面已取得答案吧！</p>
+                <p id="I6">(點擊螢幕繼續)</p>
+            </div>
+            <input class="block-input" id="進入遊戲" onchange="check_valid(this,'first_text')">
+            <button onclick="nextpage('first_text')" class="nextpage" id="go-to-first_text"><div class="arrow"></div></button>
         </main>
     </body>
     <script src="main.js"></script>

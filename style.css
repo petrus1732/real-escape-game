@@ -24,7 +24,19 @@ p {
 input {
     border-color: gold;
     font-size: 3vw;
+    width: 25vw;
     text-transform: lowercase;
+}
+
+form {
+    width: 30vw;
+    margin: 5vw auto;
+}
+
+.block-input {
+    display: block;
+    width: 30vw;
+    margin: 1vw auto;
 }
 
 .grid {
@@ -32,30 +44,128 @@ input {
 }
 
 figure {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: space-around;
-    background-color: black;
+    background-color: transparent;
     margin: auto;
+    font-size: 3vw;
+}
+
+.whole-page {
+    height: 70vh;
+}
+
+.in-backpack {
+    width: 20vw;
+    height: 20vw;
+    margin: 5vw 2vw 0;
 }
 
 img {
+    display: block;
     width: 80vw;
-    margin: 2vw;
+    margin: 2vw auto;
+    background-color: transparent;
 }
 
+.long-img {
+    width: auto;
+    height: 80%;
+}
 
+.whole-page .long-img{
+    height:80%;
+}
+
+.wide-img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 3vw;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* cover */
+
+#cover {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+#cover img {
+    filter:opacity(0.9);
+}
+
+#cover-arrow {
+    position: fixed;
+    left: 50%;
+    margin-left: -3vw;
+    z-index: 2;
+    margin-top: 70vh;
+}
+/* cover end
+
+/* instruction page -- start */
+
+#instruction-container {
+    margin-top: 10vh;
+    height: 60vh;
+}
+
+.instruction {
+    font-size: 5vh;
+    opacity: 0;
+}
+
+#I1 {
+    color: gold;
+}
+
+#I6 {
+    animation: color-blink 1.5s infinite;
+}
+
+#進入遊戲 {
+    display: none;
+}
+
+@keyframes show-up{
+    100% {
+        opacity: 1;
+    }
+}
+
+/* instructino page -- end */
 
 /* next page */
 
 .nextpage {
     display: none;
-    margin: 0 auto;
+    margin: 3vh auto 0;
     width: 6vh;
     height: 6vh;
     border-radius: 50%;
+    border: 1px solid gold;
+    animation: blink 1.5s infinite;
+}
+
+.nextpage-show {
+    display: block;
+    margin: 3vh auto 0;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    background-color: transparent;
     border: 1px solid gold;
     animation: blink 1.5s infinite;
 }
@@ -64,15 +174,21 @@ img {
     cursor: pointer;
 }
   
-@keyframes blink {
-    0%{
-        opacity: 0.5;
-    }
+@keyframes color-blink {
     50%{
-        opacity: 1;
+        color: rgba(255,255,255,0.5);
     }
-    100%{
-        opacity: 0.5;
+}
+
+@keyframes blink {
+    50%{
+        border-color: rgba(255,215,0,0.5);
+    }
+}
+
+@keyframes white-blink {
+    50%{
+        border-color: rgba(255,255,255,0.5);
     }
 }
   
@@ -114,7 +230,7 @@ img {
     width: max(3vh, 3vw);
 }
 
-#fade {
+#fade, #fade2 {
     display: none;
     position: fixed;
     right: 0vw;
@@ -124,6 +240,10 @@ img {
     opacity: 0;
     background: grey;
     z-index: 1000;
+}
+
+#fade2 {
+    opacity: 0.9;
 }
 
 #item-board, #hint-board {
@@ -137,6 +257,13 @@ img {
 
 #item-board {
     right: 3vw;
+    display: flex;
+}
+
+.items {
+    width: 20vw;
+    height: 20vw;
+    margin: 3vw;
 }
 
 #hint-board {
@@ -159,6 +286,14 @@ img {
 
 #close-item:hover, #close-hint:hover {
     cursor: pointer;
+}
+
+#item-container {
+    display: none;
+    width: 78vw;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: scroll;
 }
 
 #hint-container {
@@ -223,7 +358,7 @@ img {
 
 @keyframes opening-item {
     100%{
-        right: 10vw;
+        right: 8.3vw;
         top: 10vh;
         width: 80vw;
         height: 80vh;
@@ -233,7 +368,7 @@ img {
 
 @keyframes closing-item {
     0%{
-        right: 10vw;
+        right: 8vw;
         top: 10vh;
         width: 80vw;
         height: 80vh;
@@ -250,7 +385,7 @@ img {
 
 @keyframes opening-hint {
     100%{
-        left: 10vw;
+        left: 8.3vw;
         top: 10vh;
         width: 80vw;
         height: 80vh;
@@ -260,7 +395,7 @@ img {
 
 @keyframes closing-hint {
     0%{
-        left: 10vw;
+        left: 8.3vw;
         top: 10vh;
         width: 80vw;
         height: 80vh;
@@ -436,6 +571,10 @@ img {
 #delete {
     grid-area: 3 / 18 / span 1 / span 3;
 }
+#delete img {
+    width: 70%;
+    background-color: transparent;
+}
 
 /* keyboard -- end */
 
@@ -462,7 +601,7 @@ img {
 
 /* wordle -- end */
 
-/* pillars -- start */
+/* creditor -- start */
 
 #pillars {
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
@@ -647,12 +786,7 @@ img {
     width: 46%;
 }
 
-#usury591 {
-    width: 15vw;
-    text-align: right;
-}
-
-/* pillars -- end */
+/* creditor -- end */
 
 
 
@@ -683,17 +817,6 @@ img {
     font-size: min(4vw,4vh);
 }
 
-form {
-    width: 30vw;
-    margin: 5vw auto;
-}
-
-.block-input {
-    display: block;
-    width: 30vw;
-    margin: 1vw auto;
-}
-
 @keyframes correct {
     100% {
         background: rgb(66, 201, 25);
@@ -722,6 +845,62 @@ form {
 #symbol{
     width: 70%;
 }
+
+/* music -- start */
+#date-container {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 4vw;
+    width: 30vw;
+    margin: 3vh auto;
+}
+.date {
+    display: inline-block;
+    text-align: center;
+    width: 5vw;
+    height: 5vw;
+    border: 1px solid gold; 
+}
+.number-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
+    height: 20vw;
+    justify-content: space-around;
+    align-content: space-between;
+    margin: auto;
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 2vw;
+    background-color: grey;
+    font-size: 5vw;
+}
+
+#enter, #backspace {
+    width: 13vw;
+}
+
+.enterArrow {
+    display: inline-block;
+    width: 70%;
+    height: 50%;
+    clip-path: polygon(0% 80%, 10% 100%, 10% 86%, 100% 86%, 100% 30%, 94% 30%, 94% 74%, 10% 74%, 10% 60%);
+    background-color: white;
+}
+
+#backspace img {
+    width: 60%;
+    background-color: transparent;
+}
+
+/* music -- end */
 
 /*
 

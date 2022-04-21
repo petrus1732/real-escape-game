@@ -3,15 +3,15 @@
     <head>
         <meta charset=" utf-8">
         <meta name="viewport" content="width=device-width, intitial-scale=1">
-        <title>信</title>
+        <title>塵封記憶</title>
         <link href='./style.css' rel='stylesheet'>
     </head>
-    <body>
+    <body onload="prepareItems(1)">
         <header>
             <div id="fade"></div>
             <div id="item-board">
                 <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
-                <div id="item-container"></div>
+                <div id="item-container"><div id="fade2"></div></div>
             </div>
             <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
         </header>
@@ -51,8 +51,9 @@
             <div class="letter" id="B" onclick="press(this)">B</div>
             <div class="letter" id="N" onclick="press(this)">N</div>
             <div class="letter" id="M" onclick="press(this)">M</div>
-            <div class="letter" id="delete" onclick="press(this)"></div>
+            <div class="letter" id="delete" onclick="press(this)"><img src="./image/delete.png"></div>
         </div>
+        <button class="nextpage" id="go-to-second_text" onclick="nextpage('second_text')"><div class="arrow"></div></button>
     </body>
     <script src="main.js"></script>
 </html>

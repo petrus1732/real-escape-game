@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>tittle</title>
+        <title>塵封記憶</title>
         <link href='./style.css' rel='stylesheet'>
     </head>
 
     <body>
-        <header>
-            名稱
-        </header>
-        <main>
-            <figure>
-                <img src=".\test_picture.png" id="test">
-            </figure>
-            <button class="button"  onclick="goToSecondPage()">下一頁</button>
-        </main>
+        <figure id="cover">
+            <img src="./image/cover.jpg">
+        </figure>
+        <button onclick="nextpage('instruction_page')" class="nextpage-show" id="cover-arrow"><div class="arrow"></div></button>
     </body>
     <script src="main.js"></script>
 </html>

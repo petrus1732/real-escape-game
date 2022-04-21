@@ -6,9 +6,9 @@
         <title>塵封記憶</title>
         <link href='./style.css' rel='stylesheet'>
     </head>
-    <body onload="prepareItems(7)">
+    <body onload="prepareItems(6)">
         <header>
-            沙坑
+            可疑文件
             <div id="fade"></div>
             <div id="item-board">
                 <button id="close-item" onclick="closes('item')"><div class="cross"></div></button>
@@ -21,31 +21,31 @@
                     <div class="hints" onclick="clickHint(this,0)">
                         提示1
                         <div class="expand" id="expand1"></div>
-                        <div class="hint-content" id="hint-content1">符號與柱子對應</div>
+                        <div class="hint-content" id="hint-content1">與鍵盤有關</div>
                     </div>
                     <div class="hints" onclick="clickHint(this,1)">
                         提示2
                         <div class="expand" id="expand2"></div>
-                        <div class="hint-content" id="hint-content2">一個圈代表一個英文字</div>
+                        <div class="hint-content" id="hint-content2">住戶名稱的第一個字母</div>
                     </div>
                     <div class="hints" onclick="clickHint(this,2)">
                         提示3
                         <div class="expand" id="expand3"></div>
-                        <div class="hint-content" id="hint-content3">文字順序與彩虹顏色相關</div>
+                        <div class="hint-content" id="hint-content3">答案是中文</div>
                     </div>
                     <div class="hints" onclick="clickHint(this,3)">
                         答案
                         <div class="expand" id="expand4"></div>
-                        <div class="hint-content" id="hint-content3">reminiscence</div>
+                        <div class="hint-content" id="hint-content3">家暴</div>
                     </div>
                 </div>
             </div>
             <figure id="hint" onclick="opens('hint')"><img src="./image/hint.png" class="icon"></figure>
         </header>
         <main>
-            <figure><img src="./image/sand.jpg" id="symbol"></figure>          
-            <input class="block-input" id="reminiscence" onchange="check_valid(this, 'sixth_text')">
-            <button onclick="nextpage('sixth_text')" class="nextpage" id="go-to-sixth_text"><div class="arrow"></div></button>
+            <figure><img src="./image/building.jpg"></figure>          
+            <input class="block-input" id="家暴" onchange="check_valid(this, 'fifth_text')">
+            <button onclick="nextpage('fifth_text')" class="nextpage" id="go-to-fifth_text"><div class="arrow"></div></button>
         </main>
     </body>
     <script src="main.js"></script>
