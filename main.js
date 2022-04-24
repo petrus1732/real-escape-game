@@ -70,8 +70,9 @@ const backpackAdd = (image_src, text, type) => {
         if (!itemOpened[text]){
             image.style.position = 'fixed';
             image.style.left = '50%';
-            image.style.top = '10%';
+            
             if (type === 'wide-img') {
+                image.style.top = '10%';
                 image.style.width = '80vw';
                 image.style.height = 'auto';
             }else {
@@ -301,9 +302,6 @@ const nxt = (n) => {
                         document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
                         break;
                 }
-                break;
-            case 6:
-                window.location = './end.html';
                 break;
         }        
     }
