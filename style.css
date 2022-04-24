@@ -113,13 +113,30 @@ button {
     filter: blur(1px) opacity(0.9);
 }
 
+#auth {
+    color: white;
+    position: fixed;
+    font-size: 5vw;
+    background-color: transparent;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    margin-top: 70vh;
+}
+
+#auth input {
+    text-transform: none;
+}
+
 #cover-arrow {
+    display: none;
     position: fixed;
     left: 50%;
     margin-left: -3vw;
     z-index: 2;
     margin-top: 70vh;
 }
+
 /* cover end
 
 /* instruction page -- start */
