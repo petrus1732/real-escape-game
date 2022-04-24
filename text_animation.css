@@ -45,13 +45,10 @@ a {
   color: cyan;
 }
 
-#與我無關 {
+#與我無關, #hidden-input, #book-name {
   display: none;
 }
 
-#book-name {
-  display: none;
-}
 
 .container{
   display: none;

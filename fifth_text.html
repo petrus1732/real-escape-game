@@ -193,7 +193,7 @@
                     <span></span>
                     <span>吸</span>
                     <span>不</span>
-                    <span>過</span>
+                    <span>到</span>
                     <span>氣</span>
                     <span>，</span>
                     <span>好</span>
@@ -254,7 +254,7 @@
             </div>
             <div class="container" id="p10">
                 <figure class="whole-page">
-                    <img src="./image/diary0207.jpg" class="long-img">
+                    <img src="./image/diary0207.png" class="long-img">
                 </figure>
             </div>
             <div class="container" id="p11">
@@ -304,15 +304,20 @@
                 <div class="first dynamic-text">
                     <span>「</span>
                     <span>…</span>
+                    <span>那</span>
                     <span>是</span>
                     <span>在</span>
                     <span>哪</span>
                     <span>裡</span>
                     <span>呢</span>
                     <span>…</span>
+                    <span>？</span>
+                    <span>」</span>
                 </div>
-                <div class="second dynamic-text">
-                    <span></span>
+            </div>
+            <div class="container" id="p13">
+                <div class="first dynamic-text">
+                    <span>「</span>
                     <span>好</span>
                     <span>像</span>
                     <span>是</span>
@@ -325,21 +330,32 @@
                     <span>草</span>
                     <span>地</span>
                 </div> 
-                <div class="third dynamic-text">
+                <div class="second dynamic-text">
                     <span></span>
                     <span>附</span>
                     <span>近</span>
                     <span>…</span>
                     <span>」</span>
                 </div>  
+                <div class="third dynamic-text gold">
+                    <span></span>
+                    <span>（</span>
+                    <span>請</span>
+                    <span>前</span>
+                    <span>往</span>
+                    <span>下</span>
+                    <span>一</span>
+                    <span>個</span>
+                    <span>地</span>
+                    <span>點</span>
+                    <span>）</span>
+                </div>
                 <figure class="whole-page">
-                    <img src="./image/sand_photo.jpg" class="long-img">
+                    <img src="./image/sand_photo.png" class="wide-img">
                 </figure>             
             </div>
-            <div>
-                
-            </div>
-            <button onclick="nxt(4)" class="nextpage-show"><div class="arrow"></div></button>
+            <p id="hidden-input">到達後輸入已抵達<input class="block-input" id="已抵達" onchange="check_valid(this, 'next-page')"></p>
+            <button onclick="nxt(4)" class="nextpage-show" id="go-to-next-page"><div class="arrow"></div></button>
         </main>
     </body>
     <script src="main.js"></script>

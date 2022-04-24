@@ -71,8 +71,15 @@ const backpackAdd = (image_src, text, type) => {
             image.style.position = 'fixed';
             image.style.left = '50%';
             image.style.top = '10%';
-            image.style.width = '80vw';
-            image.style.marginLeft = '-40vw';
+            if (type === 'wide-img') {
+                image.style.width = '80vw';
+                image.style.height = 'auto';
+            }else {
+                image.style.width = 'auto';
+                image.style.height = '80vh';
+            }
+            
+            image.style.transform = 'translate(-50%,0)';
             document.getElementById('fade2').style.display = 'block';
             document.getElementById('fade2').style.zIndex = '1';
             image.style.zIndex = '2';
@@ -82,9 +89,11 @@ const backpackAdd = (image_src, text, type) => {
             if (type === 'wide-img') {
                 image.style.width = '100%';
             }else {
-                image.style.height = '100%';
+                image.style.height = '80%';
+                image.style.width = 'auto';
             }
-            image.style.marginLeft = '0';
+            image.style.transform = 'translate(0,0)';
+            image.style.marginLeft = 'auto';
             image.style.zIndex = '0';
             document.getElementById('fade2').style.display = 'none';
             itemOpened[text] = false;
@@ -97,8 +106,12 @@ const backpackAdd = (image_src, text, type) => {
 
 const check_valid = (e, next) => {
     if (e.value.toLowerCase().replace(/ /g, "")===e.id) {
-        e.style.animation = "correct 1s forwards";
-        e.setAttribute("readOnly",true);
+        if (e.id === '已抵達') {
+            document.getElementById('hidden-input').style.display = 'none';
+        }else {
+            e.style.animation = "correct 1s forwards";
+            e.setAttribute("readOnly",true);
+        }
         setTimeout(()=>document.getElementById("go-to-" + next).style.display = "block",1000);
     }
     else {
@@ -115,10 +128,10 @@ let acquiredItems = [
     {itemName:'阿姨寄來的信', source:'./image/aunt_letter.png', type:'wide-img'},
     {itemName:'威脅信', source:'./image/threat.jpg', type:'wide-img'},
     {itemName:'借據', source:'./image/credit.jpg', type:'wide-img'},
-    {itemName:'日記 12/24', source:'./image/diary1224.jpg', type:'long-img'},
-    {itemName:'日記 4/12', source:'./image/diary0412.jpg', type:'long-img'},
+    {itemName:'日記 日期未知', source:'./image/diary_unknown.jpg', type:'long-img'},
+    {itemName:'日記 4/12', source:'./image/diary0412.png', type:'long-img'},
     {itemName:'診療單', source: './image/diagnosis.jpg', type:'long-img'},
-    {itemName:'日記 2/7', source:'./image/diary0207.jpg', type:'long-img'},
+    {itemName:'日記 2/7', source:'./image/diary0207.png', type:'long-img'},
 ];
 
 const prepareItems = (n) => {
@@ -150,7 +163,7 @@ const nextInstruction = () => {
 /*story -- start */
 
 let page = 1;
-let last = [8, 15, 9, 10, 13, 5, 21];
+let last = [8, 15, 9, 10, 14, 5, 21];
 
 
 const visualize = () => {
@@ -158,89 +171,141 @@ const visualize = () => {
 }
 
 const nxt = (n) => {  
-    if (++page === last[n]){
-        if (n === 0) {
-            window.location = "./wordle.html";
-        }else if (n === 1) {
-            window.location = "./creditor.html";
-        }else if (n === 2) {
-            window.location = "./music.html";
-        }else if (n === 3) {
-            window.location = "./building.html";
-        }else if (n === 4) {
-            window.location = "./sand.html";
-        }else if (n === 5) {
-            window.location = "./library.html";
-        }else if (n === 6) {
-            window.location = './end.html';
+    if (++page === last[n]){  // change page
+        switch (n) {
+            case 0:
+                window.location = "./wordle.html";
+                break;
+            case 1:
+                window.location = "./creditor.html";
+                break;
+            case 2:
+                window.location = "./music.html";
+                break;
+            case 3:
+                window.location = "./building.html";
+                break;
+            case 4:
+                window.location = "./sand.html";
+                break;
+            case 5:
+                window.location = "./library.html";
+                break;
+            case 6:
+                window.location = './end.html';
+                break;
         }
     }else {
         document.getElementById("p" + (page-1) ).style.display = 'none';
         document.getElementById("p" + page).style.display = 'flex';
-        if (n === 0){
-            if (page === 6) {
-                backpackAdd('./image/aunt_letter.png', '阿姨寄來的信', 'wide-img');
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }
-        }else if (n === 1){
-            if (page === 6) {
-                backpackAdd('./image/credit.jpg', '借據', 'wide-img');
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite"; 
-            }else if (page === 8) {
-                backpackAdd('./image/threat.jpg', '威脅信', 'wide-img');
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }
-        }else if (n === 2) {
-            if (page === 2){
-                document.getElementById('go-to-post-gmail').style.display = 'none';
-                setTimeout(()=>{document.getElementById('與我無關').style.display = 'block';}, 5000);
-            }else if (page === 3){
-                document.getElementById('與我無關').style.display = 'none';
-            }else if (page === 6) {
-                backpackAdd('./image/diary1224.jpg', '日記 12/24', 'long-img');
-                document.getElementById('p6').style.marginTop = '10vh'; 
-                document.getElementById('p6').style.height = '70vh'; 
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }
-        }
-        else if (n === 3) {
-            if (page === 2) {
-                backpackAdd('./image/diary0412.jpg', '日記 4/12', 'long-img');
-                document.getElementById('p2').style.marginTop = '10vh'; 
-                document.getElementById('p2').style.height = '70vh'; 
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }else if (page === 4) {
-                backpackAdd('./image/diagnosis.jpg', '診療單', 'long-img');
-                document.getElementById('p4').style.marginTop = '10vh'; 
-                document.getElementById('p4').style.height = '70vh'; 
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }
-        }else if (n === 4) {
-            if (page === 10) {
-                backpackAdd('./image/diary0207.jpg', '日記 2/7', 'long-img');
-                document.getElementById('p10').style.marginTop = '10vh'; 
-                document.getElementById('p10').style.height = '70vh'; 
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }else if (page === 5) {
-                document.getElementById('p12').style.marginTop = '10vh';
-                document.getElementById('p10').style.height = '70vh';
-            }
-        }else if (n === 5){
-            if (page === 3) {
-                document.getElementById('p3').style.marginTop = '10vh'; 
-                document.getElementById('p3').style.height = '70vh';               
-                backpackAdd('./image/diary0103.png', '日記 1/3', 'long-img');
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }else if (page === 4) {
-                document.getElementById('go-to-library').style.display = 'none';
-                document.getElementById('book-name').style.display = 'block';
-                document.getElementById('p4').style.marginTop = '10vh'; 
-                document.getElementById('p4').style.height = '70vh';               
-                backpackAdd('./image/diary1225.png', '日記 12/25', 'wide-img');
-                document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
-            }
-        }
-        
+        switch (n) {
+            case 0:
+                if (page === 6) {
+                    backpackAdd('./image/aunt_letter.png', '阿姨寄來的信', 'wide-img');
+                    document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                }
+                break;
+            case 1:
+                switch (page) {
+                    case 6:
+                        backpackAdd('./image/credit.jpg', '借據', 'wide-img');
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite"; 
+                        break;
+                    case 8:
+                        backpackAdd('./image/threat.jpg', '威脅信', 'wide-img');
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                        break;
+                    case 11:
+                        document.getElementById('go-to-next-page').style.display = 'none';
+                        setTimeout(()=>{document.getElementById('hidden-input').style.display = 'block';}, 5000);
+                        break;
+                    case 12:
+                        document.getElementById('hidden-input').style.display = 'none';
+                        break;
+                }
+                break;
+            case 2:
+                switch (page) {
+                    case 2:
+                        document.getElementById('go-to-next-page').style.display = 'none';
+                        setTimeout(()=>{document.getElementById('與我無關').style.display = 'block';}, 5000);
+                        break;
+                    case 3:
+                        document.getElementById('與我無關').style.display = 'none';
+                        break;
+                    case 6:
+                        backpackAdd('./image/diary_unknown.jpg', '日記 日期未知', 'long-img');
+                        document.getElementById('p6').style.marginTop = '10vh'; 
+                        document.getElementById('p6').style.height = '70vh'; 
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                        break;
+                    case 8:
+                        document.getElementById('go-to-next-page').style.display = 'none';
+                        setTimeout(()=>{document.getElementById('hidden-input').style.display = 'block';}, 5000);
+                        break;
+                }
+                break;
+            case 3:
+                switch (page) {
+                    case 2:
+                        backpackAdd('./image/diary0412.png', '日記 4/12', 'long-img');
+                        document.getElementById('p2').style.marginTop = '10vh'; 
+                        document.getElementById('p2').style.height = '70vh'; 
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                        break;
+                    case 4:
+                        backpackAdd('./image/diagnosis.jpg', '診療單', 'long-img');
+                        document.getElementById('p4').style.marginTop = '10vh'; 
+                        document.getElementById('p4').style.height = '70vh'; 
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                        break;
+                    case 6:
+                        document.getElementById('go-to-next-page').style.display = 'none';
+                        setTimeout(()=>{document.getElementById('hidden-input').style.display = 'block';}, 4500);
+                        break;
+                    case 7:
+                        document.getElementById('hidden-input').style.display = 'none';
+                        break;
+                }
+                break;
+            case 4:
+                switch (page) {
+                    case 10:
+                        backpackAdd('./image/diary0207.png', '日記 2/7', 'long-img');
+                        document.getElementById('p10').style.marginTop = '10vh'; 
+                        document.getElementById('p10').style.height = '70vh'; 
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                        break;
+                    case 13:
+                        document.getElementById('p13').style.marginTop = '10vh'; 
+                        document.getElementById('p13').style.height = '70vh'; 
+                        document.getElementById('go-to-next-page').style.display = 'none';
+                        setTimeout(()=>{document.getElementById('hidden-input').style.display = 'block';}, 5000);
+                        break;
+                }
+                break;
+            case 5:
+                switch (page) {
+                    case 3:
+                        document.getElementById('p3').style.marginTop = '10vh'; 
+                        document.getElementById('p3').style.height = '70vh';               
+                        backpackAdd('./image/diary0103.png', '日記 1/3', 'long-img');
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                        break;
+                    case 4:
+                        document.getElementById('go-to-library').style.display = 'none';
+                        document.getElementById('book-name').style.display = 'block';
+                        document.getElementById('p4').style.marginTop = '10vh'; 
+                        document.getElementById('p4').style.height = '70vh';               
+                        backpackAdd('./image/diary1225.png', '日記 12/25', 'wide-img');
+                        document.getElementById('backpack').style.animation = "white-blink 1.5s infinite";
+                        break;
+                }
+                break;
+            case 6:
+                window.location = './end.html';
+                break;
+        }        
     }
 }
 

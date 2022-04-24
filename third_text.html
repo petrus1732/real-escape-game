@@ -239,7 +239,7 @@
                     <span>」</span>
                 </div>
                 <figure class="whole-page">
-                    <img src="./image/diary1224.jpg" class="long-img">
+                    <img src="./image/diary_unknown.jpg" class="long-img">
                 </figure>
             </div>
             <div class="container" id="p7">
@@ -293,8 +293,9 @@
                     <span>）</span>
                 </div>
             </div>
-             <input class="block-input" id="與我無關" onchange="check_valid(this, 'post-gmail')">
-            <button onclick="nxt(2)" class="nextpage-show" id="go-to-post-gmail"><div class="arrow"></div></button>
+            <input class="block-input" id="與我無關" onchange="check_valid(this, 'next-page')">
+            <p id="hidden-input">到達後輸入已抵達<input class="block-input" id="已抵達" onchange="check_valid(this, 'next-page')"></p>
+            <button onclick="nxt(2)" class="nextpage-show" id="go-to-next-page"><div class="arrow"></div></button>
         </main>
     </body>
     <script src="main.js"></script>

@@ -49,7 +49,7 @@
             </div>
             <div class="container" id="p2">
                 <figue class="whole-page">
-                    <img src="./image/diary0412.jpg" class="long-img">
+                    <img src="./image/diary0412.png" class="long-img">
                 </figue>
             </div>
             <div class="container" id="p3">
@@ -247,7 +247,8 @@
                     <span>」</span>
                 </div>
             </div>
-            <button onclick="nxt(3)" class="nextpage-show"><div class="arrow"></div></button>
+            <p id="hidden-input">到達後輸入已抵達<input class="block-input" id="已抵達" onchange="check_valid(this, 'next-page')"></p>
+            <button onclick="nxt(3)" class="nextpage-show" id="go-to-next-page"><div class="arrow"></div></button>
         </main>
     </body>
     <script src="main.js"></script>

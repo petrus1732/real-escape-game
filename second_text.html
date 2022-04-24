@@ -76,7 +76,7 @@
                     <span>有</span>
                     <span>隱</span>
                     <span>瞞</span>
-                    <span>甚</span>
+                    <span>什</span>
                     <span>麼</span>
                     <span>事</span>
                     <span>嗎</span>
@@ -239,7 +239,7 @@
                     <span>爸</span>
                     <span>…</span>
                     <span>難</span>
-                    <span>到</span>
+                    <span>道</span>
                     <span>…</span>
                 </div>
                 <div class="second dynamic-text">
@@ -405,7 +405,8 @@
                     <span>」</span>  
                 </div>
             </div>
-            <button onclick="nxt(1)" class="nextpage-show"><div class="arrow"></div></button>
+            <p id="hidden-input">到達後輸入已抵達<input class="block-input" id="已抵達" onchange="check_valid(this, 'next-page')"></p>
+            <button onclick="nxt(1)" class="nextpage-show" id="go-to-next-page"><div class="arrow"></div></button>
         </main>
     </body>
     <script src="main.js"></script>
