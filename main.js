@@ -72,14 +72,13 @@ const backpackAdd = (image_src, text, type) => {
             image.style.left = '50%';
             
             if (type === 'wide-img') {
-                image.style.top = '10%';
                 image.style.width = '80vw';
-                image.style.height = 'auto';
+                image.style.top = '10%';
             }else {
-                image.style.width = 'auto';
-                image.style.height = '80vh';
+                image.style.width = '70vw'
+                image.style.top = 0;
             }
-            
+            image.style.height = 'auto';
             image.style.transform = 'translate(-50%,0)';
             document.getElementById('fade2').style.display = 'block';
             document.getElementById('fade2').style.zIndex = '1';
