@@ -15,6 +15,32 @@
                 <div id="item-container"><div id="fade2"></div></div>
             </div>
             <figure id="backpack" onclick="opens('item')"><img src="./image/backpack_redrawn.png" class="icon"></figure>
+            <div id="hint-board">
+                <button id="close-hint" onclick="closes('hint', 4)"><div class="cross"></div></button>
+                <div id="hint-container">
+                    <div class="hints" onclick="clickHint(this,0)">
+                        提示1
+                        <div class="expand" id="expand1"></div>
+                        <div class="hint-content" id="hint-content1">與先前的資訊相關</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,1)">
+                        提示2
+                        <div class="expand" id="expand2"></div>
+                        <div class="hint-content" id="hint-content2">相同的符號為同樣的數字</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,2)">
+                        提示3
+                        <div class="expand" id="expand3"></div>
+                        <div class="hint-content" id="hint-content3">對應的數字代表在信件內的第幾個字</div>
+                    </div>
+                    <div class="hints" onclick="clickHint(this,3)">
+                        答案
+                        <div class="expand" id="expand4"></div>
+                        <div class="hint-content" id="hint-content3">與我無關</div>
+                    </div>
+                </div>
+            </div>
+            <figure id="hint" class="hidden" onclick="opens('hint')"><img src="./image/hint.png" class="icon"></figure>
         </header>
         <main>
             <div class="container" id="p1">

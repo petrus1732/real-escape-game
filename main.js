@@ -228,10 +228,12 @@ const nxt = (n) => {
             case 2:
                 switch (page) {
                     case 2:
+                        document.getElementById('hint').style.display = 'flex';
                         document.getElementById('go-to-next-page').style.display = 'none';
                         setTimeout(()=>{document.getElementById('與我無關').style.display = 'block';}, 5000);
                         break;
                     case 3:
+                        document.getElementById('hint').style.display = 'none';
                         document.getElementById('與我無關').style.display = 'none';
                         break;
                     case 6:

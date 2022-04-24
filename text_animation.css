@@ -45,7 +45,7 @@ a {
   color: cyan;
 }
 
-#與我無關, #hidden-input, #book-name {
+#與我無關, #hidden-input, #book-name, .hidden{
   display: none;
 }
 
